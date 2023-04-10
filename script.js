@@ -98,3 +98,38 @@ const summedNums = numbers.reduce((accumulator, currentValue) => {
 }, 100); // <- Second argument for .reduce()
 
 console.log(summedNums); // Output: 117
+
+const words = ["unique", "uncanny", "pique", "oxymoron", "guise"];
+
+// Something is missing in the method call below
+
+console.log(
+  words.some((word) => {
+    return word.length < 6;
+  })
+);
+
+const announceThatIAmDoingImportantWork = () => {
+  console.log("I’m doing very important work!");
+};
+
+const busy = announceThatIAmDoingImportantWork;
+
+busy(); // This function call barely takes any space!
+
+const higherOrderFunc = (param) => {
+  param();
+  return `I just invoked ${param.name} as a callback function!`;
+};
+
+const anotherFunc = () => {
+  return "I'm being invoked by the higher-order function!";
+};
+
+higherOrderFunc(anotherFunc);
+
+higherOrderFunc(() => {
+  for (let i = 0; i <= 10; i++) {
+    console.log(i);
+  }
+});
