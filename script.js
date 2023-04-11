@@ -72,3 +72,118 @@ const alienShip = {
 
 alienShip.retreat();
 alienShip.takeOff();
+
+const spaceship = {
+  telescope: {
+    yearBuilt: 2018,
+    model: "91031-XLT",
+    focalLength: 2032,
+  },
+  crew: {
+    captain: {
+      name: "Sandra",
+      degree: "Computer Engineering",
+      encourageTeam() {
+        console.log("We got this!");
+      },
+    },
+  },
+  engine: {
+    model: "Nimbus2000",
+  },
+  nanoelectronics: {
+    computer: {
+      terabytes: 100,
+      monitors: "HD",
+    },
+    "back-up": {
+      battery: "Lithium",
+      terabytes: 50,
+    },
+  },
+};
+
+spaceship.nanoelectronics["back-up"].battery; // Returns 'Lithium'
+
+let capFave = spaceship.crew.captain["favorite foods"][0];
+
+let spaceship = {
+  passengers: null,
+  telescope: {
+    yearBuilt: 2018,
+    model: "91031-XLT",
+    focalLength: 2032 
+  },
+  crew: {
+    captain: { 
+      name: 'Sandra', 
+      degree: 'Computer Engineering', 
+      encourageTeam() { console.log('We got this!') },
+     'favorite foods': ['cookies', 'cakes', 'candy', 'spinach'] }
+  },
+
+
+  const spaceship = {
+    homePlanet : 'Earth',
+    color : 'silver'
+  };
+   
+  let paintIt = obj => {
+    obj.color = 'glorious gold'
+  };
+   
+  paintIt(spaceship);
+   
+  spaceship.color // Returns 'glorious gold'
+   
+  let spaceship = {
+    homePlanet : 'Earth',
+    color : 'red'
+  };
+  let tryReassignment = obj => {
+    obj = {
+      identified : false, 
+      'transport type' : 'flying'
+    }
+    console.log(obj) // Prints {'identified': false, 'transport type': 'flying'}
+   
+  };
+  tryReassignment(spaceship) // The attempt at reassignment does not work.
+  spaceship // Still returns {homePlanet : 'Earth', color : 'red'};
+   
+  spaceship = {
+    identified : false, 
+    'transport type': 'flying'
+  }; // Regular reassignment still works.
+
+
+
+  let spaceship = {
+    crew: {
+      captain: { 
+        name: 'Lily', 
+        degree: 'Computer Engineering', 
+        cheerTeam() { console.log('You got this!') } 
+      },
+      'chief officer': { 
+        name: 'Dan', 
+        degree: 'Aerospace Engineering', 
+        agree() { console.log('I agree, captain!') } 
+      },
+      medic: { 
+        name: 'Clementine', 
+        degree: 'Physics', 
+        announce() { console.log(`Jets on!`) } },
+      translator: {
+        name: 'Shauna', 
+        degree: 'Conservation Science', 
+        powerFuel() { console.log('The tank is full!') } 
+      }
+    }
+  }; 
+   
+  // for...in
+  for (let crewMember in spaceship.crew) {
+    console.log(`${crewMember}: ${spaceship.crew[crewMember].name}`);
+  }
+  
