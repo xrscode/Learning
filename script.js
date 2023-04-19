@@ -99,3 +99,60 @@ const monsterFactory = (name, age, energySource, catchPhrase) => {
 
 const ghost = monsterFactory("Ghouly", 251, "ectoplasm", "BOO!");
 ghost.scare(); // 'BOO!'
+
+const monsterFactory = (name, age) => {
+  return {
+    name: name,
+    age: age,
+  };
+};
+
+const monsterFactory = (name, age) => {
+  return {
+    name,
+    age,
+  };
+};
+
+const vampire = {
+  name: "Dracula",
+  residence: "Transylvania",
+  preferences: {
+    day: "stay inside",
+    night: "satisfy appetite",
+  },
+};
+
+const residence = vampire.residence;
+console.log(residence); // Prints 'Transylvania'
+
+const { residence } = vampire;
+console.log(residence); // Prints 'Transylvania'
+
+const { day } = vampire.preferences;
+console.log(day); // Prints 'stay inside'
+
+const robot = {
+  model: "SAL-1000",
+  mobile: true,
+  sentient: false,
+  armor: "Steel-plated",
+  energyLevel: 75,
+};
+
+// What is missing in the following method call?
+const robotKeys = Object.keys(robot);
+
+console.log(robotKeys);
+
+// Declare robotEntries below this line:
+const robotEntries = Object.entries(robot);
+console.log(robotEntries);
+
+// Declare newRobot below this line:
+const newRobot = Object.assign(
+  { laserBlaster: true, voiceRecognition: true },
+  robot
+);
+
+console.log(newRobot);
