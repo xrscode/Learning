@@ -178,3 +178,218 @@
 // }
 
 // sortTheKitchen(kitchen);
+// const exampleColony = [
+//   {
+//     name: "anthony",
+//     type: "worker",
+//   },
+//   {
+//     name: "dec",
+//     type: "worker",
+//   },
+//   {
+//     name: "marie-antoinette",
+//     type: "queen",
+//   },
+//   {
+//     name: "adam",
+//     type: "zombie",
+//   },
+// ];
+
+// function checkIfHealthyColony(colony, hasAntidote) {
+//   let zombie = false;
+
+//   console.log(colony);
+//   for (let i = 0; i < colony.length; i++) {
+//     if (colony[i].type === "zombie") {
+//       console.log(
+//         `It looks like we have a Zombie here! ${colony[i].name} is a ${colony[i].type}!`
+//       );
+//       zombie = true;
+//     }
+//   }
+//   if (zombie === true && hasAntidote === false) {
+//     return false;
+//   } else if (zombie === true && hasAntidote === true) {
+//     return true;
+//   } else {
+//     return true;
+//   }
+// }
+
+// checkIfHealthyColony(
+//   [
+//     {
+//       name: "anthony",
+//       type: "worker",
+//     },
+//     {
+//       name: "dec",
+//       type: "worker",
+//     },
+//     {
+//       name: "marie-antoinette",
+//       type: "queen",
+//     },
+//     {
+//       name: "adam",
+//       type: "zombie",
+//     },
+//   ],
+//   "yes"
+// );
+
+// //Making the Guest List:
+// function makeGuestList(person) {
+//   for (const key in person) {
+//     let splitName = person.name.split(" ");
+//     person.firstName = splitName[0];
+//     person.lastName = splitName[1];
+//   }
+//   delete person.name;
+//   return person;
+// }
+
+// makeGuestList({ name: "Hannah Fry", age: 46 });
+// // should return { firstName: "Hannah", lastName: "Fry", age: 46 }
+// function trackAttendees(person, ticketCost) {
+//   // Your code goes here...
+//   ticketCost = Number(ticketCost);
+//   person.paidForTicket = ticketCost;
+//   console.log(person);
+// }
+
+// trackAttendees({ firstName: "Veronica", lastName: "Green", age: 46 }, "25");
+// // should return { firstName: "Veronica", lastName: "Green", age: 46, paidForTicket: 25 }
+
+// trackAttendees({ firstName: "Anna", lastName: "Lytical", age: 27 }, "0");
+// // should return { firstName: "Anna", lastName: "Lytical", age: 27, paidForTicket: 0 }
+
+//Party:
+// function isPartyViable(guests) {
+//   // Your code goes here...
+//   let enoughGuests = guests.length >= 5 ? true : false;
+//   let totalTicket = 0;
+//   for (const key in guests) {
+//     //console.log(guests[key]);
+//     totalTicket += guests[key].paidForTicket;
+//   }
+//   if (enoughGuests === true && totalTicket >= 100) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+
+// const guests = [
+//   { name: "diya", paidForTicket: 15 },
+//   { name: "amul", paidForTicket: 2 },
+//   { name: "saleh", paidForTicket: 2 },
+//   { name: "philippa", paidForTicket: 30 },
+// ];
+// isPartyViable(guests);
+// // should return false
+
+// //Ordering Supplies:
+// function orderSupplies(supplies, guests) {
+//   // Your code goes here...
+//   let totalSupplies = 0;
+//   for (const key in supplies) {
+//     totalSupplies += supplies[key];
+//   }
+//   return totalSupplies * guests;
+// }
+
+// orderSupplies({ cake: 2, iceCream: 7 }, 2);
+// // should return 18
+
+// //How many Tables?
+// function calculateTables(guests, seats) {
+//   let seating = {};
+//   let tables = Math.floor(guests / seats);
+//   let remainder = guests % seats;
+//   seating.tables = tables;
+//   seating.remainingGuests = remainder;
+//   return seating;
+// }
+
+// calculateTables(26, 5);
+// // should return { tables: 2 , remainingGuests: 0 }
+
+//Taxi Fare Calculator
+// function calculateTaxiFare(seconds) {
+//   let minutes = Math.ceil(seconds / 60);
+//   console.log(minutes);
+//   let everyMinuteAfter = minutes - 3;
+//   console.log(everyMinuteAfter);
+//   return minutes > 3 ? Math.round((5 + everyMinuteAfter * 0.7) * 100) : 500;
+// }
+
+// console.log(calculateTaxiFare(575));
+// // should return 500
+
+//Who are the winners?
+// function pickWinners(numbers) {
+//   let myArr = [];
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (i % 2 != 0) {
+//       if (numbers[i] % 2 != 0) {
+//         myArr.push({ seat: i, ticketCost: numbers[i] });
+//       } else {
+//         continue;
+//       }
+//     }
+//   }
+//   console.log(myArr);
+//   return myArr;
+// }
+
+// pickWinners([6, 7, 12, 49]);
+// // should return [{seat: 1, ticketCost: 7}, {seat: 3, ticketCost: 49}]
+
+//Gathering Feedback
+function gatherFeedback(feedbackArray) {
+  // Your code goes here...
+  let myobj = { positive: 0, negative: 0, neutral: 0 };
+
+  for (let i = 0; i < feedbackArray.length; i++) {
+    let subArray = feedbackArray[i];
+    for (let k = 0; k < subArray.length; k++) {
+      if (typeof subArray[k] === "number") {
+        if (subArray[k] >= 7 && subArray[k] <= 10) {
+          //console.log(`Positive: ${subArray[k]}.`);
+          myobj.positive += 1;
+        } else if (subArray[k] >= 4 && subArray[k] <= 6) {
+          //console.log(`Neutral: ${subArray[k]}.`);
+          myobj.neutral += 1;
+        } else if (subArray[k] <= 3 && subArray[k] >= 0) {
+          //console.log(`Negative: ${subArray[k]}.`);
+          myobj.negative += 1;
+        }
+      } //Value
+    }
+  }
+  //console.log(myobj);
+  return myobj;
+}
+gatherFeedback([
+  ["maddie", 10],
+  ["jatinder", 3],
+  ["rose", 6],
+]);
+// returns {positive: 1, negative: 1, neutral:1}
+
+gatherFeedback([
+  ["maddie", 10],
+  ["jatinder", 10],
+  ["rose", 10],
+]);
+// returns {positive: 3, negative: 0, neutral:0}
+
+gatherFeedback([
+  ["maddie", 10],
+  ["jatinder", 10],
+  ["rose", 1],
+]);
+// returns {positive: 2, negative: 1, neutral:0}
