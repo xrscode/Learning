@@ -349,47 +349,208 @@
 // // should return [{seat: 1, ticketCost: 7}, {seat: 3, ticketCost: 49}]
 
 //Gathering Feedback
-function gatherFeedback(feedbackArray) {
-  // Your code goes here...
-  let myobj = { positive: 0, negative: 0, neutral: 0 };
+// function gatherFeedback(feedbackArray) {
+//   // Your code goes here...
+//   let myobj = { positive: 0, negative: 0, neutral: 0 };
 
-  for (let i = 0; i < feedbackArray.length; i++) {
-    let subArray = feedbackArray[i];
-    for (let k = 0; k < subArray.length; k++) {
-      if (typeof subArray[k] === "number") {
-        if (subArray[k] >= 7 && subArray[k] <= 10) {
-          //console.log(`Positive: ${subArray[k]}.`);
-          myobj.positive += 1;
-        } else if (subArray[k] >= 4 && subArray[k] <= 6) {
-          //console.log(`Neutral: ${subArray[k]}.`);
-          myobj.neutral += 1;
-        } else if (subArray[k] <= 3 && subArray[k] >= 0) {
-          //console.log(`Negative: ${subArray[k]}.`);
-          myobj.negative += 1;
-        }
-      } //Value
-    }
-  }
-  //console.log(myobj);
-  return myobj;
-}
-gatherFeedback([
-  ["maddie", 10],
-  ["jatinder", 3],
-  ["rose", 6],
-]);
-// returns {positive: 1, negative: 1, neutral:1}
+//   for (let i = 0; i < feedbackArray.length; i++) {
+//     let subArray = feedbackArray[i];
+//     for (let k = 0; k < subArray.length; k++) {
+//       if (typeof subArray[k] === "number") {
+//         if (subArray[k] >= 7 && subArray[k] <= 10) {
+//           //console.log(`Positive: ${subArray[k]}.`);
+//           myobj.positive += 1;
+//         } else if (subArray[k] >= 4 && subArray[k] <= 6) {
+//           //console.log(`Neutral: ${subArray[k]}.`);
+//           myobj.neutral += 1;
+//         } else if (subArray[k] <= 3 && subArray[k] >= 0) {
+//           //console.log(`Negative: ${subArray[k]}.`);
+//           myobj.negative += 1;
+//         }
+//       } //Value
+//     }
+//   }
+//   console.log(myobj);
+//   return myobj;
+// }
+// gatherFeedback([
+//   ["maddie", 10],
+//   ["jatinder", 3],
+//   ["rose", 6],
+// ]);
+// // returns {positive: 1, negative: 1, neutral:1}
 
-gatherFeedback([
-  ["maddie", 10],
-  ["jatinder", 10],
-  ["rose", 10],
-]);
-// returns {positive: 3, negative: 0, neutral:0}
+// gatherFeedback([
+//   ["maddie", 10],
+//   ["jatinder", 10],
+//   ["rose", 10],
+// ]);
+// // returns {positive: 3, negative: 0, neutral:0}
 
-gatherFeedback([
-  ["maddie", 10],
-  ["jatinder", 10],
-  ["rose", 1],
-]);
-// returns {positive: 2, negative: 1, neutral:0}
+// gatherFeedback([
+//   ["maddie", 10],
+//   ["jatinder", 10],
+//   ["rose", 1],
+// ]);
+// // returns {positive: 2, negative: 1, neutral:0}
+
+// const ham = "Too cool for school.";
+// let cheese = "I wouldn't take that!";
+// cheese = "On second thoughts, do take it.";
+// console.log(`${13 % 5}`);
+// console.log(`${13 / 5}`);
+// const greeting = "Hello" + " World";
+// console.log(greeting);
+
+// let playerName = "Dylan";
+// let stringLiteral = `Hello ${playerName}.`;
+// console.log(stringLiteral);
+
+// const greeting = "Hello there!";
+// const firstChar = greeting[0];
+// const lastChar = greeting[greeting.length - 1];
+// console.log(lastChar);
+// console.log(5 == "5"); //True
+// console.log(5 === "5"); //False
+
+// console.log(!true); //Evalues to Fasle.
+// console.log(!false); //Evaluates to True.
+// console.log(5 !== 3); //Evaluates to True.
+
+// const animals = [
+//   "Alligator",
+//   "Fox",
+//   "Armadillo",
+//   "Tiger",
+//   "Anteater",
+//   "Raccoon",
+//   "Chicken",
+//   "Sheep",
+//   "Dog",
+//   "Antelope",
+//   "Albatross",
+//   "Cat",
+//   "Alpaca",
+//   "Ape",
+//   "Anaconda",
+// ];
+
+// function countAnimals() {
+//   counter = 0;
+//   for (let i = 0; i < animals.length; i++) {
+//     animals[i][0] === "A" ? (counter += 1) : {};
+//   }
+//   return counter;
+// }
+
+// console.log(countAnimals());
+// let isWeekend;
+
+// switch (day) {
+//   case "Monday":
+//   case "Tuesday":
+//   case "Wednesday":
+//   case "Thursday":
+//   case "Friday":
+//     isWeekend = false;
+//     break;
+//   case "Saturday":
+//   case "Sunday":
+//     isWeekend = true;
+//     break;
+//   default:
+//     console.log(day + " is not a valid day");
+// }
+
+// const smoothieIngredients = ["apple", "banana", "strawberry", "kiwi"];
+
+// const numbers = [1, 7, 3, 99, 5, 25];
+
+// const firstNumber = numbers[0]; // 1
+// const secondNumber = numbers[1]; // 7
+// const lastNumber = numbers[5]; // 25
+
+// const evenNumbers = [2, 18, 5, 22, 10];
+// console.log(evenNumbers.length); //Prints Length of Array; 5.;
+// console.log(evenNumbers[evenNumbers.length - 1]); //Prints the final value in the array.
+
+// const blueLine = ["Byker", "Chillingham Road", "Walkergate", "Wallsend"];
+
+// blueLine.push("Hadrian Road");
+
+// console.log(blueLine); // ['Byker', 'Chillingham Road', 'Walkergate', 'Wallsend', 'Hadrian Road']
+
+// blueLine.push("Howdon", "Percy Main");
+
+// console.log(blueLine); // ['Byker', 'Chillingham Road', 'Walkergate', 'Wallsend', 'Hadrian Road', 'Howdon', 'Percy Main']
+
+// const greenLine = ["Jarrow", "Bede", "Simonside", "Tyne Dock"];
+
+// greenLine.unshift("Hebburn");
+
+// console.log(greenLine); // ['Hebburn', 'Jarrow', 'Bede', 'Simonside', 'Tyne Dock']
+
+// const yellowLine = ["West Street", "City Hall", "Cathedral", "Castle Square"];
+
+// yellowLine.pop();
+
+// console.log(yellowLine); // ['West Street', 'City Hall', 'Cathedral']
+
+// yellowLine.shift();
+
+// console.log(yellowLine); // ['City Hall', 'Cathedral']
+
+// const shoppingList = [
+//   "broccoli",
+//   "chocolate",
+//   "mushrooms",
+//   "baked beans",
+//   "butter",
+//   "tomatoes",
+// ];
+
+// const firstThreeItems = shoppingList.slice(0, 3);
+// console.log(firstThreeItems); // ['broccoli', 'chocolate', 'mushrooms']
+
+// const lastThreeItems = shoppingList.slice(-3);
+// console.log(lastThreeItems); // ['baked beans', 'butter', 'tomatoes']
+
+// const starter = ["tomato", "cream", "basil"];
+// const main = ["lemon", "thyme", "chicken"];
+// const dessert = ["apple", "pastry", "cream"];
+
+// const dinner = [starter, main, dessert];
+
+// console.log(dinner);
+// /*
+// [
+//   ['tomato', 'cream', 'basil'],
+//   ['lemon', 'thyme', 'chicken'],
+//   ['apple', 'pastry', 'cream']
+// ]
+// */
+
+// const cream = dinner[0][1];
+
+// const myArr = [
+//   [1, 2],
+//   [3, 4],
+//   [5, 6],
+// ];
+// const newArr = myArr.flat(1);
+// console.log(newArr);
+
+// const films = [
+//   "Iron Man",
+//   "Cars",
+//   ["Inception", "Interstellar", "Toy Story", "The Notebook"],
+//   "Girl Interrupted",
+// ];
+// for (let i = 0; i < films.length; i++) {
+//   console.log(`${films[i]} is at position ${i}`);
+// }
+
+// const marioArray = ["Mario", "Luigi", "Bowser"];
+// // Reassign the third element below!
+// marioArray[2] = ["Peach", "Yoshi"];
+// console.log(marioArray);
