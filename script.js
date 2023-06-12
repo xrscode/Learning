@@ -98,3 +98,59 @@
 //   };
 
 //Challenge 12: Making the Guest List:
+// function makeGuestList(person) {
+//   // Your code goes here...
+//   const name = person.name.split(" ");
+//   delete person.name;
+//   person.firstName = name[0];
+//   person.lastName = name[1];
+//   return person;
+// }
+
+//Challenge 13: Tracking the Ticket Prices.
+// function trackAttendees(person, ticketCost) {
+//   // Your code goes here...
+//   person.paidForTicket = Number(ticketCost);
+//   return person;
+// }
+
+//Challenge 14:  Can We Have the Party?
+// function isPartyViable(guests) {
+//     // Your code goes here...
+// const numOfPeople = guests.length;
+// let ticketPrice = 0;
+// for (let i = 0; i < guests.length; i++) {
+//   ticketPrice += guests[i].paidForTicket;
+// }
+
+// if (ticketPrice >= 100 && numOfPeople >= 5) {
+//   return true;
+// } else {
+//   return false;
+// }
+//     }
+
+//Challenge 15: Ordering Supplies:
+// function orderSupplies(supplies, guests) {
+//   let totalSupplies = 0;
+//   for (const key in supplies) {
+//     totalSupplies += supplies[key];
+//   }
+//   return totalSupplies * guests;
+// }
+
+//Challenge 16:  How Many Tables:
+// function calculateTables(guests, seats) {
+//   // Your code goes here...
+//   return {
+//     tables: Number(Math.round(guests / seats)),
+//     remainingGuests: Number(guests % seats),
+//   };
+// }
+
+//Challenge 17:  Taxi Fare Calculator:
+// function calculateTaxiFare(seconds) {
+//   // Your code goes here...
+//   let minutes = Math.ceil(seconds / 60);
+//   return minutes < 3 ? 500 : (minutes - 3) * 70 + 500;
+// }
