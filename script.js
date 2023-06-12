@@ -554,3 +554,97 @@
 // // Reassign the third element below!
 // marioArray[2] = ["Peach", "Yoshi"];
 // console.log(marioArray);
+// function createToDoList() {
+//   const toDoList = [];
+//   // Do not alter any code above here
+//   toDoList.unshift(["Task 1", 5]);
+//   toDoList.push(["Task 2", 6]);
+//   toDoList.push(["Task 3", 56]);
+//   // Do not alter any code below here
+//   return toDoList;
+// }
+
+// console.log(createToDoList());
+
+// for (let i = 0; i < 10; i++) {
+//   console.log(i);
+// } //Starts at 0. Ends at 9.  Increase by 1.
+
+// for (let i = 10; i > 4; i--) {
+//   console.log(i);
+// } //Starts at 10.  Ends at 5.  Decrement by 1.
+
+// for (let i = 3; i <= 21; i += 3) {
+//   console.log(i);
+// } //Starts at 3.  Ends at 21.  Increase by 3.
+
+// const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+// for (let i = 0; i < alphabet.length; i++) {
+//   console.log("the letter at position " + i + " is " + alphabet[i]);
+// }
+
+// const blastOff = [
+//   "We have Lift Off!",
+//   "One!",
+//   "Two!",
+//   "Three!",
+//   "Four!",
+//   "Five!",
+//   "Six!",
+//   "Seven!",
+//   "Eight!",
+//   "Nine!",
+//   "Ten!",
+// ];
+// // Write your for loop below
+// //Start Condition:
+// console.log(blastOff.length - 1);
+// //Stop Condition:
+// console.log(blastOff[0]);
+
+// for (let i = blastOff.length - 1; i >= 0; i--) {
+//   console.log(blastOff[i]);
+// }
+
+// const alphabet = [
+//   "a",
+//   "b",
+//   "c",
+//   "d",
+//   "e",
+//   "f",
+//   "g",
+//   "h",
+//   "i",
+//   "j",
+//   "k",
+//   "l",
+//   "m",
+//   "n",
+//   "o",
+//   "p",
+//   "q",
+//   "r",
+//   "s",
+//   "t",
+//   "u",
+//   "v",
+//   "w",
+//   "x",
+//   "y",
+//   "z",
+// ];
+
+// for (let i = 0; i < alphabet.length; i += 5) {
+//   console.log(alphabet[i].toUpperCase());
+//   alphabet[i] = alphabet[i].toUpperCase();
+// }
+let myobj = { name: "Lucy", password: "n0rthc0derzzz" };
+// returns 'n0rthc0derzzz'
+console.log(myobj);
+
+//Returns the VALUE:
+console.log(myobj.password);
+
+//Returns the KEY:
