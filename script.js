@@ -640,11 +640,13 @@
 //   console.log(alphabet[i].toUpperCase());
 //   alphabet[i] = alphabet[i].toUpperCase();
 // }
-let myobj = { name: "Lucy", password: "n0rthc0derzzz" };
-// returns 'n0rthc0derzzz'
-console.log(myobj);
+// let myobj = { name: "Lucy", password: "n0rthc0derzzz" };
+// // returns 'n0rthc0derzzz'
+// console.log(myobj);
 
-//Returns the VALUE:
-console.log(myobj.password);
+// //Returns the VALUE:
+// console.log(myobj.password);
 
-//Returns the KEY:
+// //Returns the KEY:
+
+//
