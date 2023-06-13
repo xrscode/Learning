@@ -184,3 +184,182 @@
 // }
 
 //Code 13311484258
+// function sayHello(country, time) {
+//     let greeting = "";
+//     console.log(country, time);
+//     if ((country == "Spain" || country == "Mexico") && time > 0 && time < 12) {
+//       greeting = "buenos dias";
+//     } else if (
+//       (country == "Spain" || country == "Mexico") &&
+//       time > 12 &&
+//       time < 24
+//     ) {
+//       greeting = "buenas noches";
+//     } else if (country == "France" && time > 0 && time < 12) {
+//       greeting = "bon matin";
+//     } else if (country == "France" && time > 12 && time < 24) {
+//       greeting = "bon soir";
+//     } else {
+//       greeting = null;
+//     }
+//     return greeting;
+//   }
+
+//Challenge 1: Say Happy Birthday.
+// function sayHappyBirthday(number) {
+//   // please complete this function ...
+//   return `Happy Birthday, you are ${number} today!`;
+// }
+
+//Challenge 2: Remove Last Item.
+// function removeLastItem(arr) {
+//   // write your code here
+//   arr.pop();
+//   return arr;
+// }
+// console.log(removeLastItem([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]));
+
+//Challenge 3: Staying the Night.
+// function checkForEnoughBeds(beds, numOfPeople) {
+//   // please complete this function ...
+//   let space = 0;
+//   space += beds.doubles * 2;
+//   space += beds.singles;
+//   return space >= numOfPeople ? true : false;
+// }
+
+// //Challenge 4: Make Alternating Array.
+// function makeAlternatingArray(array) {
+//   // please complete this function ...
+//   let myArr = [];
+//   if (array.length <= 1) {
+//     console.log(`The array is too small. `);
+//     return array;
+//   } else {
+//     for (let i = 0; i < array.length; i += 2) {
+//       myArr.push(array[i]);
+//     }
+//   }
+//   console.log(myArr);
+//   return myArr;
+// }
+// makeAlternatingArray([]);
+// makeAlternatingArray([1]);
+// makeAlternatingArray(["a", "b", "c", "d", "e"]);
+// // should return ['a', 'c', 'e']
+// makeAlternatingArray([100, 42, 99, 3, -5]);
+// // should return [100, 99, -5]
+
+//Challenge 5: Noisy Pets //RETURN TO.
+// function addSoundToPets(pets) {
+//   // write your code here
+//   let myArr = [];
+//   let myobj = {};
+//   for (let i = 0; i < pets.length; i++) {
+//     myobj.name = pets[i].name;
+//     myobj.type = pets[i].type;
+//     if (pets[i].type === "cat") {
+//       myobj.sound = "meow!";
+//     } else if (pets[i].type === "dog") {
+//       myobj.sound = "woof!";
+//     }
+//   }
+//   myArr.push(myobj);
+//   console.log(myArr);
+//   return myArr;
+// }
+// addSoundToPets([{ name: "Bolin", type: "cat" }]);
+
+//Count the Capitals:
+// function countTheCapitals(string) {
+//   let capitals = 0;
+//   for (let i = 0; i < string.length; i++) {
+//     if (
+//       string[i] === string[i].toUpperCase() &&
+//       string[i] !== string[i].toLowerCase() &&
+//       string[i] !== " "
+//     ) {
+//       capitals += 1;
+//     }
+//   }
+//   console.log(capitals);
+//   return capitals;
+// }
+
+// countTheCapitals("we LOVE cOdInG");
+
+//Find the Knife and Fork:
+// function findKnifeAndFork(utensils) {
+//   // write your code here
+//   let myobj = { knife: 0, fork: 0 };
+//   for (let i = 0; i < utensils.length; i++) {
+//     if (utensils[i] === "fork") {
+//       myobj.fork = i;
+//     } else if (utensils[i] === "knife") {
+//       myobj.knife = i;
+//     }
+//   }
+//   console.log(myobj);
+//   if (myobj.knife === 0) {
+//     myobj.knife = -1;
+//   } else if (myobj.fork === 0) {
+//     myobj.fork = -1;
+//   }
+//   return myobj;
+// }
+
+//Challenge Truncate String:
+// function truncateString(str, n) {
+//   // please complete this function ...
+//   console.log(str.slice(0, n));
+//   if (n > str.length || str.length === n) {
+//     return str;
+//   } else {
+//     return str.slice(0, n) + "...";
+//   }
+// }
+
+// function findOldestPerson(people) {
+//   // please complete this function ...
+//   let oldest = 0;
+//   let person = "";
+//   if (people.length === 0) {
+//     return `no people found`;
+//   }
+//   for (let i = 0; i < people.length; i++) {
+//     if (people[i].age > oldest) {
+//       oldest = people[i].age;
+//       person = people[i].name;
+//     }
+//     console.log(people[i].age);
+//   }
+//   console.log(person);
+//   return person;
+// }
+// findOldestPerson([]);
+// function makeSingleArray(arr) {
+//   // write your code here
+//   let myArr = [];
+//   for (let i = 0; i < arr.length; i++) {
+//     let newArr = arr[i];
+//     for (i = 0; i < newArr.length; i++) {
+//       if (typeof newArr[i] === "number") {
+//         myArr.push(newArr[i]);
+//       }
+//     }
+//   }
+//   return myArr;
+// }
+
+function roundUpToNearestMultiple(n, x) {
+  // write your code here
+  console.log(n, x);
+  if(x === 0){
+      return -1;
+  } else (
+    for (let i = n + 1; i < n + 100; i++){
+        console.log(i);
+      }
+  )
+  }
+  roundUpToNearestMultiple(4, 8);
