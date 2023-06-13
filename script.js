@@ -55,19 +55,16 @@
 
 //Challenge 8: Biggest and Smallest.
 // function findBiggestAndSmallest(numbers) {
-//   // Your code goes here...
-//   if (numbers.length > 0) {
-//     let sorted = numbers.sort(function (a, b) {
-//       return a - b;
-//     });
-//     let biggestNum = sorted[sorted.length - 1];
-//     let smallestNum = sorted[0];
-//     let myobj = { biggest: biggestNum, smallest: smallestNum };
-//     return myobj;
-//   } else {
-//     return {};
+//     // Your code goes here...
+//     if (numbers.length > 0) {
+//       let sorted = numbers.sort(function (a, b) {
+//         return a - b;
+//       });
+//       return {biggest: sorted[sorted.length - 1], smallest: sorted[0]}
+//     } else {
+//       return {};
+//     }
 //   }
-// }
 
 //Challenge 9: Is this a Prime?
 // function checkIsPrime(num) {
