@@ -70,20 +70,22 @@
 // }
 
 //Challenge 9: Is this a Prime?
-//Primes are divisble by themselves and 1, only.
 // function checkIsPrime(num) {
-//   // Your code goes here...
-//   if (num === 1) {
-//     return false;
-//   }
-//   let abc = 0;
-//   for (let i = num - 1; i > 1; i--) {
-//     if (num % i === 0) {
-//       abc += 1;
+//     // Your code goes here...
+//     if (num === 1) {
+//       return false;
+//     } else {
+//       for (let i = 2; i < num; i++) {
+//         if (num % i === 0) {
+//           console.log(i);
+//           return false;
+//         } else {
+//           continue;
+//         }
+//       }
 //     }
+//     return true;
 //   }
-//   return abc > 0 ? true : false;
-// }
 
 //Challenge 10:  Hello, Northcoders Party Planner!:
 // function greetGuest(name) {
@@ -94,7 +96,7 @@
 //Challenge 11:  Find the Useful Emails:
 // function findTicketPrices(emailString) {
 //     // Your code goes here...
-//     return /[1-9]/g.test(emailString);
+//return /[1-9]/g.test(emailString);
 //   };
 
 //Challenge 12: Making the Guest List:
@@ -123,6 +125,7 @@
 //   ticketPrice += guests[i].paidForTicket;
 // }
 
+//Challenge 15:  Tracking the Ticket Prices.
 // if (ticketPrice >= 100 && numOfPeople >= 5) {
 //   return true;
 // } else {
@@ -130,7 +133,7 @@
 // }
 //     }
 
-//Challenge 15: Ordering Supplies:
+//Challenge 16: Ordering Supplies:
 // function orderSupplies(supplies, guests) {
 //   let totalSupplies = 0;
 //   for (const key in supplies) {
@@ -139,7 +142,7 @@
 //   return totalSupplies * guests;
 // }
 
-//Challenge 16:  How Many Tables:
+//Challenge 17:  How Many Tables:
 // function calculateTables(guests, seats) {
 //   // Your code goes here...
 //   return {
@@ -148,9 +151,39 @@
 //   };
 // }
 
-//Challenge 17:  Taxi Fare Calculator:
+//Challenge 18:  Taxi Fare Calculator:
 // function calculateTaxiFare(seconds) {
 //   // Your code goes here...
 //   let minutes = Math.ceil(seconds / 60);
 //   return minutes < 3 ? 500 : (minutes - 3) * 70 + 500;
 // }
+
+//Challenge 19:  Who are the winners?:
+// function pickWinners(numbers) {
+//   // Your code goes here...
+//   let myArr = [];
+//   for (let i = 1; i < numbers.length; i += 2) {
+//     if (numbers[i] % 2 != 0) {
+//       myArr.push({ seat: i, ticketCost: numbers[i] });
+//     }
+//   }
+//   return myArr;
+// }
+
+//Challenge 20: Gathering Feedback:
+// function gatherFeedback(feedbackArray) {
+//   // Your code goes here...
+//   let obj = { positive: 0, negative: 0, neutral: 0 };
+//   for (let i = 0; i < feedbackArray.length; i++) {
+//     if (feedbackArray[i][1] >= 0 && feedbackArray[i][1] <= 3) {
+//       obj.negative += 1;
+//     } else if (feedbackArray[i][1] >= 4 && feedbackArray[i][1] <= 6) {
+//       obj.neutral += 1;
+//     } else if (feedbackArray[i][1] >= 7 && feedbackArray[i][1] <= 10) {
+//       obj.positive += 1;
+//     }
+//   }
+//   return obj;
+// }
+
+//Code 13311484258
