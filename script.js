@@ -212,10 +212,74 @@
 //   return sandwich.slice(1, -1);
 //   }
 
-//Challenge 5: Remove item.
+//Challenge 5: Remove Item.
 // function removeItem(array, n) {
 //   // Your code goes here...
-
 //   return array.filter((_, index) => index !== n);
 // }
-// console.log(removeItem([1], 0));
+
+//Challenge 6: Merge Arrays;
+// function mergeArrays(arr1, arr2) {
+//   // Your code goes here...
+//   const myArr = [];
+//   for(let i = 0; i < arr1.length; i++){
+//       myArr.push(arr1[i]);
+//   }
+//    for(let i = 0; i < arr2.length; i++){
+//       myArr.push(arr2[i]);
+//   }
+//   return myArr;
+//   }
+
+//Challenge 7: Is Item Omnipresent?
+// function isItemOmnipresent(arrayOfArrays, item) {
+//   let num = 0;
+
+//   for(let i = 0; i < arrayOfArrays.length; i++) {
+//     let k = arrayOfArrays[i];
+//     for(let i = 0; i < k.length; i++){
+//       k[i] === item ? num += 1 : {};
+//     }
+//   }
+//   return (num === arrayOfArrays.length);
+//   }
+
+//Challenge 8: Flatten by One:
+// function flattenArrayByOne(arrayOfArrays) {
+//   // Your code goes here...
+//   const myArr = [];
+//   for(let i = 0; i < arrayOfArrays.length; i++){
+//       for(let k = 0; k < arrayOfArrays[i].length; k++){
+//           myArr.push(arrayOfArrays[i][k]);
+//       }
+//   }
+//   return myArr;
+//   }
+
+//OBJECTS
+
+//Challenge 1: Is over 40?
+// function isOver40(user) {
+//   // Your code goes here...
+//   return user.age > 41
+//   }
+
+//Challenge 2: Get user age.
+// function getUserAge(user) {
+//   // Your code goes here...
+//   return 2023 - user.yearOfBirth
+//   }
+
+//Challenge 3: User pet age.
+// function getUserPetAge(user) {
+//   // Your code goes here...
+//   return user.pet.age
+//   }
+
+//Challenge 4: Create Product.
+// function createProduct() {
+//   // Your code goes here...
+//   return {type: 'example!', price: 1}
+//   }
+
+//Challenge 5: Add price to product.
