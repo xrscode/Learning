@@ -360,5 +360,79 @@
 //   return num;
 //   }
 
-
 //ADVANCED CHALLENGES:
+//Challenge 1: Flipping Booleans.
+// function flipBooleans(bools) {
+//   bools.forEach(function (item, i) {
+//     bools[i] = !item;
+//   });
+//   return bools;
+// }
+// console.log(flipBooleans([true, false, false, true]));
+
+//Challenge 2: Translating Keys.
+// function translateKey(student, keyToChange, translation) {
+//     const myObj = {};
+//     for (const key in student) {
+//       if (key != keyToChange) {
+//         myObj[key] = student[key];
+//       } else {
+//         myObj[translation] = student[key];
+//       }
+//     }
+//     return myObj;
+//   }
+
+// const student = {
+//   prénom: "Carla",
+//   surname: "Bruni",
+//   job: "Artist",
+// };
+// const keyToChange = "prénom";
+// const translation = "firstName";
+
+// console.log(translateKey(student, keyToChange, translation));
+
+// Challenge 3: Find the Dentist.
+// function findFirstDentist(people) {
+//   // Your code goes here...
+//   for (let i = 0; i < people.length; i++) {
+//     for (const key in people[i]) {
+//       if (people[i].isDentist === true) {
+//         return people[i];
+//       }
+//     }
+//   }
+//   return null;
+// }
+
+// console.log(
+//   findFirstDentist([
+//     { name: "Callum", isDentist: false },
+//     { name: "Carrie", isDentist: true },
+//   ])
+// ); // returns {name: 'Carrie', isDentist: true}
+
+//Challenge 4:  Tally the people in Manchester.
+// function tallyPeopleInManchester(people) {
+//   // Your code goes here...
+//   let num = 0;
+//   people.forEach(function (value, index) {
+//     people[index].lives.city === "Manchester" ? (num += 1) : {};
+//   });
+//   return num;
+// }
+
+// tallyPeopleInManchester([
+//   { name: "Carrie", lives: { country: "UK", city: "Leeds" }, age: 32 },
+// ]);
+
+//Challenge 5: Get hte pug owners!
+// function getPugOwners(dogs) {
+//   // Your code goes here...
+//   const myArr = [];
+//   dogs.forEach(function (value, index) {
+//     dogs[index].breed === "Pug" ? myArr.push(dogs[index].owner) : {};
+//   });
+//   return myArr;
+// }
