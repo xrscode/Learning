@@ -283,3 +283,79 @@
 //   }
 
 //Challenge 5: Add price to product.
+// function addPriceToProduct(product, price) {
+//   product.price = price;
+//   return product;
+// }
+
+//Challenge 6: Get property of product.
+// function getPropertyOfProduct(product, property) {
+//   // Your code goes here...
+//   console.log(product.quantity)
+//   return product[property];
+//   }
+
+//Challenge 7: Add property to product.
+// function addPropertyToProduct(product, property, value) {
+//   // Your code goes here...
+//   product[property] = value;
+//   return product;
+// }
+
+//Challenge 8: Create Northcoder.
+// function createNorthcoder(name, yearOfBirth) {
+//   // Your code goes here...
+//   const age = 2023 - yearOfBirth;
+//   return {name: name, age: age, language: 'JavaScript' }
+//   }
+
+//Challenge 9: Update Voter Address.
+// function updateVoterAddress(voter, correctHouseNumber) {
+//   // Your code goes here...
+//   voter.address.houseNumber = correctHouseNumber;
+//   }
+
+//Challenge 10: Create User String.
+// function createUserString(userObj) {
+//   // Your code goes here...
+//   return `name: ${userObj.name}, age: ${userObj.age}, language: JavaScript`
+//   }
+
+//Challenge 11: Get Album Properties.
+// function getAlbumProperties(obj) {
+//   // Your code goes here...
+//   const myArr = [];
+//   for(let key in obj){
+//       myArr.push(key);
+//   }
+//   return myArr;
+//   }
+
+//Challenge 12: Get Northcoder Names.
+// function getNorthcodersNames(northcoders) {
+//   // Your code goes here...
+//   const myArr = [];
+//   for(let i = 0; i < northcoders.length; i++){
+//       myArr.push(northcoders[i].name);
+//   }
+//   return myArr;
+//   }
+
+//Challenge 13: Delete Many Passwords.
+// function deleteManyPasswords(users) {
+//   // Your code goes here...
+//   for(let i = 0; i<users.length; i++){
+//       delete users[i].password;
+//   }
+//   return users;
+//   }
+
+//Challenge 14: Count the objects.
+// function countTheObjects(arr) {
+//   // Your code goes here...
+//   let num = 0;
+//   for(let i = 0; i < arr.length; i++){
+//       typeof arr[i] === 'object' && !Array.isArray(arr[i]) && arr[i] != null  ? num += 1 : {};
+//   }
+//   return num;
+//   }
