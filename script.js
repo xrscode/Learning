@@ -427,7 +427,7 @@
 //   { name: "Carrie", lives: { country: "UK", city: "Leeds" }, age: 32 },
 // ]);
 
-//Challenge 5: Get hte pug owners!
+//Challenge 5: Get the pug owners!
 // function getPugOwners(dogs) {
 //   // Your code goes here...
 //   const myArr = [];
@@ -436,3 +436,234 @@
 //   });
 //   return myArr;
 // }
+
+//Challenge 6: Pluralising Keys.
+// function pluraliseKeys(obj) {
+//     // Your code goes here...
+//     const myObj = {};
+//     for(let key in obj){
+//      if(Array.isArray(obj[key]) && key[key.length - 1] !== 's'){
+//       const newKey = key + 's'
+//       myObj[newKey] = obj[key];
+//      } else {
+//       myObj[key] = obj[key];
+//      }
+//     }
+//     return myObj;
+//     }
+
+//Challenge 7: Getting Word Lengths;
+// function getWordLengths(string) {
+//     // Your code goes here...
+//     const myArr = [];
+//     string = string.split(' ')
+//     string.forEach(function(value, index){
+//         value.length > 0 ? myArr.push(value.length) : {};
+//     })
+//     return myArr;
+//     }
+
+//Challenge 8: Get Palindromes:
+// function getPalindromes(words) {
+//     // Your code goes here...
+//     const myArr = [];
+//     words.forEach(function(value){
+//       value.split('').reverse().join('') === value ? myArr.push(value) : {};
+//     })
+//     return myArr;
+//     }
+
+//Challenge 9: Replace Letters with Xs:
+// function replaceLettersWithXs(string) {
+//     // Your code goes here...
+//     let myStr = ''
+//     for(let i = 0; i < string.length; i++){
+//         if (string[i].match(/[a-z]/i)){
+//             myStr += 'X'
+//         } else {
+//             myStr += string[i];
+//         }
+//     }
+//     return myStr;
+//     }
+
+//Challenge 10: Please enter a valid mobile number:
+// function validMobileNumber(mobileNumber) {
+//     console.log(mobileNumber);
+
+//     if(mobileNumber.slice(0,2) === '07' && mobileNumber.slice(2).length === 9 && /^[0-9]+$/.test(mobileNumber)){
+//       return true;
+//     } else if (mobileNumber.slice(0,4) === '+447' && mobileNumber.slice(4).length === 9 && /^[0-9]+$/.test(mobileNumber.slice(1))){
+//       return true;
+//     }else if (mobileNumber.slice(0,5) === '00447' && mobileNumber.slice(5).length === 9 && /^[0-9]+$/.test(mobileNumber)){
+//       return true;
+//     }
+//     return false;
+//     }
+
+//Challenge 11:  Summing the digits in a string:
+// function sumDigitsFromString(string) {
+//     // Your code goes here...
+//     let num = 0;
+//     for(let i = 0; i < string.length; i++){
+//         console.log(string[i])
+//         if(Number(string[i])) {
+//             num += Number(string[i]);
+//         }
+//     }
+//     return num;
+// }
+
+//Challenge 12: Calling all Williams!:
+// function getWilliams(names) {
+//   // Your code goes here...
+//   const nameList = [];
+//   for (let i = 0; i < names.length; i++) {
+//     names[i].split(" ")[1] === "Williams" ? nameList.push(names[i]) : {};
+//   }
+//   return nameList;
+// }
+// getWilliams(["John Williamson", "Sam Williams"]);
+
+//Challenge 13: Getting Factorials:
+// function getFactorials(nums) {
+//   const myArr = [];
+//   ////////////////////////
+//   //Factorial Function:
+//   function factorial(num) {
+//     let number = num;
+//     for (let i = num - 1; i > 0; i--) {
+//       number *= i;
+//     }
+//     return number;
+//   }
+//   ///////////////////////
+//   nums.forEach(function (i) {
+//     myArr.push(factorial(i));
+//   });
+//   return myArr;
+// }
+
+// console.log(getFactorials([1, 5, 2]));
+
+//Challenge 14: Find the largest number:
+// function largestNumber(number) {
+//   // Your code goes here...
+//   const myArr = String(number).split("");
+//   const newArr = [];
+//   let myNum = "";
+//   myArr.forEach(function (i) {
+//     newArr.push(Number(i));
+//   });
+//   newArr.sort(function (a, b) {
+//     return b - a;
+//   });
+//   newArr.forEach(function (i) {
+//     myNum += String(i);
+//   });
+//   return Number(myNum);
+// }
+
+//Challenge 15: Enter the Matrix;
+
+// function generateMatrix(number) {
+//   // Your code goes here...
+//   const myArr = [];
+//   for (let i = number; i > 0; i--) {
+//     myArr.push([]);
+//     for (let k = i; k > 0; k--) {
+//       myArr[i - 1].push(k);
+//     }
+//   }
+//   console.log(myArr);
+// }
+
+function generateMatrix(number) {
+  const myArr = [];
+  for (let i = number; i > 0; i--) {
+    myArr.push([]);
+    for (let k = i; k > 0; k--) {
+      myArr[number - i].push(null);
+    }
+  }
+  return myArr;
+}
+console.log(generateMatrix(2));
+// console.log(largestNumber(937846)); // returns 987643
+
+// function sortTheKitchen(kitchen) {
+//     console.log(kitchen);
+//     for (const key in kitchen) {
+//       if (typeof kitchen[key] === "string") {
+//         kitchen[key] = kitchen[key].toLowerCase();
+//         console.log(`This is a string: ${kitchen[key]}.`);
+//       }
+//       if (key === "hoover");
+//       delete kitchen.hoover;
+//     }
+//     let totalShelves = 0;
+//     kitchen.shelvesInCupboards
+//       ? (totalShelves += kitchen.shelvesInCupboards)
+//       : (totalShelves += 0);
+//     kitchen.shelvesNotInCupboards
+//       ? (totalShelves += kitchen.shelvesNotInCupboards)
+//       : (totalShelves += 0);
+
+//     kitchen.totalShelves = totalShelves;
+//     delete kitchen.shelvesInCupboards;
+//     delete kitchen.shelvesNotInCupboards;
+
+//     return kitchen;
+//   }
+
+// function sortTheKitchen(kitchen) {
+//   // Don't change the code below this line
+//   //Step 1: Jumbled String Values.
+//   for (const key in kitchen) {
+//     typeof kitchen[key] === "string"
+//       ? (kitchen[key] = kitchen[key].toLowerCase())
+//       : {};
+//   }
+
+//   //Step 2: Delete Hoover.
+//   delete kitchen.hoover;
+
+//   //Step 3: Count Shelves and Delete.
+//   let kitchenShelves = 0;
+//   kitchen.shelvesInCupboards > 0
+//     ? (kitchenShelves += kitchen.shelvesInCupboards)
+//     : {};
+//   kitchen.shelvesNotInCupboards > 0
+//     ? (kitchenShelves += kitchen.shelvesNotInCupboards)
+//     : {};
+
+//   kitchen.totalShelves = kitchenShelves;
+//   delete kitchen.shelvesInCupboards;
+//   delete kitchen.shelvesNotInCupboards;
+//   return kitchen;
+// }
+
+// sortTheKitchen({
+//   hasFridge: true,
+//   favouriteAppliance: "KeTtlE",
+//   food: "eGgS",
+//   shelvesInCupboards: 3,
+//   shelvesNotInCupboards: 2,
+//   petName: "RhuBarB",
+//   hoover: "DysOn",
+// });
+
+// const obj = {
+//   fruit: "tomato",
+//   dog: "Vizsla",
+//   colour: "red",
+// };
+
+// for (const key in obj) {
+//   console.log(obj[key]);
+//   if (obj[key] === "tomato") {
+//     obj[key] = "pear";
+//   }
+// }
+
+// console.log(obj);
