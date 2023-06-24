@@ -565,31 +565,17 @@
 // }
 
 //Challenge 15: Enter the Matrix;
-
-// function generateMatrix(number) {
-//   // Your code goes here...
-//   const myArr = [];
-//   for (let i = number; i > 0; i--) {
-//     myArr.push([]);
-//     for (let k = i; k > 0; k--) {
-//       myArr[i - 1].push(k);
+// function generateMatrix(num) {
+//     const myArr = [];
+//     for (let i = 1; i <= num; i++) {
+//       myArr.push([]);
+//       for (let k = 0; k < num; k++) {
+//         myArr[i - 1].push(null);
+//       }
 //     }
+//     return myArr;
 //   }
-//   console.log(myArr);
-// }
-
-function generateMatrix(number) {
-  const myArr = [];
-  for (let i = number; i > 0; i--) {
-    myArr.push([]);
-    for (let k = i; k > 0; k--) {
-      myArr[number - i].push(null);
-    }
-  }
-  return myArr;
-}
-console.log(generateMatrix(2));
-// console.log(largestNumber(937846)); // returns 987643
+//   console.log(matrix(3));
 
 // function sortTheKitchen(kitchen) {
 //     console.log(kitchen);
@@ -667,3 +653,38 @@ console.log(generateMatrix(2));
 // }
 
 // console.log(obj);
+// function generateMatrix(num) {
+//   const myArr = [];
+//   for (let i = 1; i <= num; i++) {
+//     myArr.push([]);
+//     for (let k = 0; k < num; k++) {
+//       myArr[i - 1].push(null);
+//     }
+//   }
+//   return myArr;
+// }
+// console.log(matrix(3));
+
+// function addGuestsToParty(invitees) {
+//   const party = {
+//     host: "Paul Copley",
+//     venue: "Hatch",
+//     theme: "Under the sea",
+//     guests: [
+//       {
+//         name: "Rose",
+//       },
+//       {
+//         name: "Eli",
+//       },
+//     ],
+//   };
+//   invitees.forEach((person) => {
+//     if (person.RSVP === "yes") {
+//       party.guests.push({
+//         name: person.name,
+//       });
+//     }
+//   });
+//   return party.guests;
+// }
