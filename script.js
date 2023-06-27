@@ -37,26 +37,50 @@
 
 //Data Reverse - 6kyu:
 //https://www.codewars.com/kata/569d488d61b812a0f7000015/train/javascript
-function dataReverse(data) {
-  // Your code here
-  const myArr = [];
-  const group = 8;
-  for (let i = 0; i < data.length; i += group) {
-    const eights = data.slice(i, i + group);
-    myArr.push(eights);
-  }
-  const myArr2 = [];
-  myArr.reverse().forEach(function (value) {
-    value.forEach(function (val2) {
-      myArr2.push(val2);
-    });
-  });
+// function dataReverse(data) {
+//   // Your code here
+//   const myArr = [];
 
-  return myArr2;
-}
-console.log(
-  dataReverse([
-    1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1,
-    0, 1, 0, 1, 0, 1, 0,
-  ])
-);
+//   for (let i = 0; i < data.length; i += group) {
+//     const eights = data.slice(i, i + 8);
+//     eights.forEach(function (value) {
+//       myArr.push(value);
+//     });
+//   }
+//   // const myArr2 = [];
+//   // myArr.reverse().forEach(function (value) {
+//   //   value.forEach(function (val2) {
+//   //     myArr2.push(val2);
+//   //   });
+//   // });
+
+//   return myArr;
+// }
+// console.log(
+//   dataReverse([
+//     1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1,
+//     0, 1, 0, 1, 0, 1, 0,
+//   ])
+// );
+
+//Alternative Capitlization - 7kyu.
+// https://www.codewars.com/kata/59cfc000aeb2844d16000075/train/javascript
+// function capitalize(s) {
+//   let even = s
+//     .split("")
+//     .map(function (value, index) {
+//       return index % 2 === 0 ? value.toUpperCase() : value.toLowerCase();
+//     })
+//     .join("");
+//   let odd = s
+//     .split("")
+//     .map(function (value, index) {
+//       return index % 2 === 0 ? value.toLowerCase() : value.toUpperCase();
+//     })
+//     .join("");
+//   return [even, odd];
+// }
+// console.log(capitalize("codewarriors"));
+
+//Playing with Digits - 6kyu.
+// https://www.codewars.com/kata/5552101f47fc5178b1000050/javascript
