@@ -84,20 +84,32 @@
 
 //  Sum of Digits - 6kyu.
 // https://www.codewars.com/kata/541c8630095125aba6000c00
-function digitalRoot(n) {
-  // ...
-  let num = n;
-  if (String(n).length > 1) {
-    num = 0;
-    String(num)
-      .split("")
-      .forEach(function (value) {
-        num += Number(value);
-        return num;
-      });
-  } else {
-    return num;
-  }
-}
+// function digitalRoot(n) {
+//   let num = 0;
+//   String(n)
+//     .split("")
+//     .forEach(function (value) {
+//       num += Number(value);
+//     });
+//   return String(num).length === 1 ? num : digitalRoot(num);
+// }
 
-console.log(digitalRoot(15));
+//Encrypt This - 6kyu.
+// https://www.codewars.com/kata/5848565e273af816fb000449/train/javascript
+const encryptThis = function (text) {
+  let myStr1 = "";
+  for (let i = 0; i < text.length; i++) {
+    if (text[i].length >= 3) {
+      let myStr = "";
+      let first = text.charCodeAt(0);
+      let second = text.slice(text.length - 1);
+      let third = text.slice(2, text.length - 1);
+      let fourth = text.slice(1, 2);
+      myStr = first + second + third + fourth + " ";
+      myStr1 += myStr;
+    }
+  }
+  console.log(myStr1);
+};
+
+encryptThis("A wise old owl lived in an oak");
