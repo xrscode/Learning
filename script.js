@@ -82,5 +82,22 @@
 // }
 // console.log(capitalize("codewarriors"));
 
-//Playing with Digits - 6kyu.
-// https://www.codewars.com/kata/5552101f47fc5178b1000050/javascript
+//  Sum of Digits - 6kyu.
+// https://www.codewars.com/kata/541c8630095125aba6000c00
+function digitalRoot(n) {
+  // ...
+  let num = n;
+  if (String(n).length > 1) {
+    num = 0;
+    String(num)
+      .split("")
+      .forEach(function (value) {
+        num += Number(value);
+        return num;
+      });
+  } else {
+    return num;
+  }
+}
+
+console.log(digitalRoot(15));
