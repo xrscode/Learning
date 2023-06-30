@@ -97,19 +97,24 @@
 //Encrypt This - 6kyu.
 // https://www.codewars.com/kata/5848565e273af816fb000449/train/javascript
 const encryptThis = function (text) {
-  let myStr1 = "";
-  for (let i = 0; i < text.length; i++) {
-    if (text[i].length >= 3) {
-      let myStr = "";
-      let first = text.charCodeAt(0);
-      let second = text.slice(text.length - 1);
-      let third = text.slice(2, text.length - 1);
-      let fourth = text.slice(1, 2);
-      myStr = first + second + third + fourth + " ";
-      myStr1 += myStr;
+  console.log(text);
+  let myStr = "";
+  text.split(" ").forEach(function (value, index) {
+    if (value.length < 2) {
+      index > 0
+        ? (myStr += " " + value.charCodeAt(0))
+        : (myStr += value.charCodeAt(0));
+    } else if (value.length < 3 && value.length > 1) {
+      myStr += " " + value.charCodeAt(0) + value.slice(1);
+    } else {
+      myStr +=
+        " " +
+        value.charCodeAt(0) +
+        value.slice(-1) +
+        value.slice(2, -1) +
+        value.slice(1, 2);
     }
-  }
-  console.log(myStr1);
+  });
+  return myStr.trim();
 };
-
-encryptThis("A wise old owl lived in an oak");
+console.log(encryptThis(`This works!`));
