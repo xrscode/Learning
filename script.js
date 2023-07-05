@@ -96,25 +96,60 @@
 
 //Encrypt This - 6kyu.
 // https://www.codewars.com/kata/5848565e273af816fb000449/train/javascript
-const encryptThis = function (text) {
-  console.log(text);
-  let myStr = "";
-  text.split(" ").forEach(function (value, index) {
-    if (value.length < 2) {
-      index > 0
-        ? (myStr += " " + value.charCodeAt(0))
-        : (myStr += value.charCodeAt(0));
-    } else if (value.length < 3 && value.length > 1) {
-      myStr += " " + value.charCodeAt(0) + value.slice(1);
-    } else {
-      myStr +=
-        " " +
-        value.charCodeAt(0) +
-        value.slice(-1) +
-        value.slice(2, -1) +
-        value.slice(1, 2);
-    }
-  });
-  return myStr.trim();
-};
-console.log(encryptThis(`This works!`));
+// const encryptThis = function (text) {
+//   console.log(text);
+//   let myStr = "";
+//   text.split(" ").forEach(function (value, index) {
+//     if (value.length < 2) {
+//       index > 0
+//         ? (myStr += " " + value.charCodeAt(0))
+//         : (myStr += value.charCodeAt(0));
+//     } else if (value.length < 3 && value.length > 1) {
+//       myStr += " " + value.charCodeAt(0) + value.slice(1);
+//     } else {
+//       myStr +=
+//         " " +
+//         value.charCodeAt(0) +
+//         value.slice(-1) +
+//         value.slice(2, -1) +
+//         value.slice(1, 2);
+//     }
+//   });
+//   return myStr.trim();
+// };
+
+//Persistent Bugger - kyu 6;
+// https://www.codewars.com/kata/55bf01e5a717a0d57e0000ec/train/javascript
+// function persistence(num) {
+//   let counter = 0;
+//   while (String(num).length > 1) {
+//     num = String(num)
+//       .split("")
+//       .reduce((a, b) => a * b)
+//       .toString();
+//     counter += 1;
+//   }
+//   return counter;
+// }
+
+//  Take a Number and Sum its Digits - 6kyu.
+//  https://www.codewars.com/kata/5626b561280a42ecc50000d1/solutions/javascript
+// function sumDigPow(a, b) {
+//   // Your code here
+//   const myArr = [];
+//   for (let i = a; i <= b; i++) {
+//     if (i > 0 && i < 10) {
+//       myArr.push(i);
+//     } else if (
+//       String(i)
+//         .split("")
+//         .reduce(function (a, b, i) {
+//           return Number(a) + Number(b ** (i + 1));
+//         }) === i
+//     )
+//       myArr.push(i);
+//   }
+//   return myArr;
+// }
+
+// console.log(sumDigPow(0, 136));
