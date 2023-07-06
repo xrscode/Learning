@@ -153,3 +153,84 @@
 // }
 
 // console.log(sumDigPow(0, 136));
+//
+
+//Codewars Katas:  KYU 7
+// function countLanguages(list) {
+//   // thank you for checking out the Coding Meetup kata :)
+//   let obj = {};
+//   list.forEach(function (value) {
+//     console.log(value.language);
+//     if (Object.keys(obj).includes(value.language)) {
+//       obj[value.language]++;
+//     } else {
+//       obj[value.language] = 1;
+//     }
+//   });
+//   return obj;
+// }
+
+//Codewars Katas: KYU 7:
+// https://www.codewars.com/kata/58287977ef8d4451f90001a0/train/javascript
+// function isSameLanguage(list) {
+//   //console.log(list[1].language);
+//   return list.every(function (value) {
+//     return value.language === list[0].language;
+//   });
+// }
+
+//Codewars Katas: Find the most senior developer. KYU 6:
+// https://www.codewars.com/kata/582887f7d04efdaae3000090/javascript
+function findSenior(list) {
+  let eldest = 0;
+  let myArr = [];
+  list.forEach(function (value) {
+    value.age > eldest ? (eldest = value.age) : {};
+  });
+  list.forEach(function (value) {
+    value.age === eldest ? myArr.push(value) : {};
+  });
+  return myArr;
+}
+
+console.log(
+  findSenior([
+    {
+      firstName: "Gabriel",
+      lastName: "X.",
+      country: "Monaco",
+      continent: "Europe",
+      age: 49,
+      language: "PHP",
+    },
+    {
+      firstName: "Odval",
+      lastName: "F.",
+      country: "Mongolia",
+      continent: "Asia",
+      age: 38,
+      language: "Python",
+    },
+    {
+      firstName: "Emilija",
+      lastName: "S.",
+      country: "Lithuania",
+      continent: "Europe",
+      age: 19,
+      language: "Python",
+    },
+    {
+      firstName: "Sou",
+      lastName: "B.",
+      country: "Japan",
+      continent: "Asia",
+      age: 49,
+      language: "PHP",
+    },
+  ])
+);
+
+function findSenior(list) {
+  var maxAge = Math.max(...list.map((person) => person.age));
+  return list.filter((person) => person.age === maxAge);
+}
