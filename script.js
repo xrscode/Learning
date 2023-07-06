@@ -181,56 +181,86 @@
 
 //Codewars Katas: Find the most senior developer. KYU 6:
 // https://www.codewars.com/kata/582887f7d04efdaae3000090/javascript
-function findSenior(list) {
-  let eldest = 0;
-  let myArr = [];
-  list.forEach(function (value) {
-    value.age > eldest ? (eldest = value.age) : {};
-  });
-  list.forEach(function (value) {
-    value.age === eldest ? myArr.push(value) : {};
-  });
-  return myArr;
+// function findSenior(list) {
+//   let eldest = 0;
+//   let myArr = [];
+//   list.forEach(function (value) {
+//     value.age > eldest ? (eldest = value.age) : {};
+//   });
+//   list.forEach(function (value) {
+//     value.age === eldest ? myArr.push(value) : {};
+//   });
+//   return myArr;
+// }
+
+// console.log(
+//   findSenior([
+//     {
+//       firstName: "Gabriel",
+//       lastName: "X.",
+//       country: "Monaco",
+//       continent: "Europe",
+//       age: 49,
+//       language: "PHP",
+//     },
+//     {
+//       firstName: "Odval",
+//       lastName: "F.",
+//       country: "Mongolia",
+//       continent: "Asia",
+//       age: 38,
+//       language: "Python",
+//     },
+//     {
+//       firstName: "Emilija",
+//       lastName: "S.",
+//       country: "Lithuania",
+//       continent: "Europe",
+//       age: 19,
+//       language: "Python",
+//     },
+//     {
+//       firstName: "Sou",
+//       lastName: "B.",
+//       country: "Japan",
+//       continent: "Asia",
+//       age: 49,
+//       language: "PHP",
+//     },
+//   ])
+// );
+
+// function findSenior(list) {
+//   var maxAge = Math.max(...list.map((person) => person.age));
+//   return list.filter((person) => person.age === maxAge);
+// }
+function isPartyViable(guests) {
+  const expressionOne = /* NUMBER OF GUESTS */ >= 5;
+  const expressionTwo = /* TOTAL PAID FOR TICKETS */ >= 100;
+  return expressionOne && expressionTwo;
 }
 
 console.log(
-  findSenior([
-    {
-      firstName: "Gabriel",
-      lastName: "X.",
-      country: "Monaco",
-      continent: "Europe",
-      age: 49,
-      language: "PHP",
-    },
-    {
-      firstName: "Odval",
-      lastName: "F.",
-      country: "Mongolia",
-      continent: "Asia",
-      age: 38,
-      language: "Python",
-    },
-    {
-      firstName: "Emilija",
-      lastName: "S.",
-      country: "Lithuania",
-      continent: "Europe",
-      age: 19,
-      language: "Python",
-    },
-    {
-      firstName: "Sou",
-      lastName: "B.",
-      country: "Japan",
-      continent: "Asia",
-      age: 49,
-      language: "PHP",
-    },
+  isPartyViable([
+    { name: "diya", paidForTicket: 15 },
+    { name: "amul", paidForTicket: 2 },
+    { name: "saleh", paidForTicket: 2 },
+    { name: "philippa", paidForTicket: 100 },
+    { name: "philippa", paidForTicket: 100 },
   ])
 );
 
-function findSenior(list) {
-  var maxAge = Math.max(...list.map((person) => person.age));
-  return list.filter((person) => person.age === maxAge);
-}
+function addSoundToPets(pets) {
+  // write your code here
+  for(const key in pets){
+      if(pets[key] = 'cat'){
+          console.log('i am a cat')
+          pets.sound  = 'meow!'
+      }
+      else if(pets[key] = 'dog'){
+          console.log('I am a dog')
+          pets.sound = 'Woof!'
+      }
+  }
+  return pets
+  }
