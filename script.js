@@ -193,136 +193,153 @@
 //   return myArr;
 // }
 
+//Codewars Katas:  Coding Meetup Katas - kyu 6:
+// https://www.codewars.com/kata/5829ca646d02cd1a65000284/train/javascript
+// function isAgeDiverse(list) {
+//   // thank you for checking out the Coding Meetup kata :)
+//   let obj = {
+//     teens: 0,
+//     twenties: 0,
+//     thirties: 0,
+//     fourties: 0,
+//     fifties: 0,
+//     sixties: 0,
+//     seventies: 0,
+//     eighties: 0,
+//     nineties: 0,
+//     centenarian: 0,
+//   };
+
+//   for (let i = 0; i < list.length; i++) {
+//     if (list[i].age >= 10 && list[i].age < 20) {
+//       obj.teens += 1;
+//     } else if (list[i].age >= 20 && list[i].age < 30) {
+//       obj.twenties += 1;
+//     } else if (list[i].age >= 30 && list[i].age < 40) {
+//       obj.thirties += 1;
+//     } else if (list[i].age >= 40 && list[i].age < 50) {
+//       obj.fourties += 1;
+//     } else if (list[i].age >= 50 && list[i].age < 60) {
+//       obj.fifties += 1;
+//     } else if (list[i].age >= 60 && list[i].age < 70) {
+//       obj.sixties += 1;
+//     } else if (list[i].age >= 70 && list[i].age < 80) {
+//       obj.seventies += 1;
+//     } else if (list[i].age >= 80 && list[i].age < 90) {
+//       obj.eighties += 1;
+//     } else if (list[i].age >= 90 && list[i].age < 100) {
+//       obj.nineties += 1;
+//     } else if (list[i].age >= 100) {
+//       obj.centenarian += 1;
+//     }
+//   }
+
+//   console.log(obj);
+
+//   return (
+//     obj.teens > 0 &&
+//     obj.twenties > 0 &&
+//     obj.thirties > 0 &&
+//     obj.fourties > 0 &&
+//     obj.fifties > 0 &&
+//     obj.sixties > 0 &&
+//     obj.seventies > 0 &&
+//     obj.eighties > 0 &&
+//     obj.nineties > 0 &&
+//     obj.centenarian > 0
+//   );
+// }
+
 // console.log(
-//   findSenior([
+//   isAgeDiverse([
 //     {
-//       firstName: "Gabriel",
-//       lastName: "X.",
-//       country: "Monaco",
-//       continent: "Europe",
-//       age: 49,
-//       language: "PHP",
-//     },
-//     {
-//       firstName: "Odval",
-//       lastName: "F.",
-//       country: "Mongolia",
-//       continent: "Asia",
-//       age: 38,
-//       language: "Python",
-//     },
-//     {
-//       firstName: "Emilija",
-//       lastName: "S.",
-//       country: "Lithuania",
-//       continent: "Europe",
+//       firstName: "Harry",
+//       lastName: "K.",
+//       country: "Brazil",
+//       continent: "Americas",
 //       age: 19,
 //       language: "Python",
 //     },
 //     {
-//       firstName: "Sou",
-//       lastName: "B.",
-//       country: "Japan",
+//       firstName: "Kseniya",
+//       lastName: "T.",
+//       country: "Belarus",
+//       continent: "Europe",
+//       age: 29,
+//       language: "JavaScript",
+//     },
+//     {
+//       firstName: "Jing",
+//       lastName: "X.",
+//       country: "China",
 //       continent: "Asia",
-//       age: 49,
+//       age: 39,
+//       language: "Ruby",
+//     },
+//     {
+//       firstName: "Noa",
+//       lastName: "A.",
+//       country: "Israel",
+//       continent: "Asia",
+//       age: 40,
+//       language: "Ruby",
+//     },
+//     {
+//       firstName: "Andrei",
+//       lastName: "E.",
+//       country: "Romania",
+//       continent: "Europe",
+//       age: 59,
+//       language: "C",
+//     },
+//     {
+//       firstName: "Maria",
+//       lastName: "S.",
+//       country: "Peru",
+//       continent: "Americas",
+//       age: 60,
+//       language: "C",
+//     },
+//     {
+//       firstName: "Lukas",
+//       lastName: "X.",
+//       country: "Croatia",
+//       continent: "Europe",
+//       age: 75,
+//       language: "Python",
+//     },
+//     {
+//       firstName: "Chloe",
+//       lastName: "K.",
+//       country: "Guernsey",
+//       continent: "Europe",
+//       age: 88,
+//       language: "Ruby",
+//     },
+//     {
+//       firstName: "Viktoria",
+//       lastName: "W.",
+//       country: "Bulgaria",
+//       continent: "Europe",
+//       age: 98,
 //       language: "PHP",
+//     },
+//     {
+//       firstName: "Piotr",
+//       lastName: "B.",
+//       country: "Poland",
+//       continent: "Europe",
+//       age: 128,
+//       language: "JavaScript",
 //     },
 //   ])
 // );
-
-// function findSenior(list) {
-//   var maxAge = Math.max(...list.map((person) => person.age));
-//   return list.filter((person) => person.age === maxAge);
-// // }
-// function isPartyViable(guests) {
-//   const expressionOne = /* NUMBER OF GUESTS */ >= 5;
-//   const expressionTwo = /* TOTAL PAID FOR TICKETS */ >= 100;
-//   return expressionOne && expressionTwo;
-// }
-
-// console.log(
-//   isPartyViable([
-//     { name: "diya", paidForTicket: 15 },
-//     { name: "amul", paidForTicket: 2 },
-//     { name: "saleh", paidForTicket: 2 },
-//     { name: "philippa", paidForTicket: 100 },
-//     { name: "philippa", paidForTicket: 100 },
-//   ])
-// );
-
-// function addSoundToPets(pets) {
-//   // write your code here
-//   for(const key in pets){
-//       if(pets[key] = 'cat'){
-//           console.log('i am a cat')
-//           pets.sound  = 'meow!'
-//       }
-//       else if(pets[key] = 'dog'){
-//           console.log('I am a dog')
-//           pets.sound = 'Woof!'
-//       }
-//   }
-//   return pets
-//   }
-function allContinents(list) {
-  // thank you for checking out the Coding Meetup kata :)
-  let a = false;
-  const myObj = { Africa: 0, Americas: 0, Asia: 0, Europe: 0, Oceania: 0 };
-  for (let i = 0; i < list.length; i++) {
-    console.log(list[i].continent);
-    myObj[list[i].continent]++;
-  }
-  console.log(myObj);
-  return (
-    myObj.Africa > 0 &&
-    myObj.Americas > 0 &&
-    myObj.Asia > 0 &&
-    myObj.Europe > 0 &&
-    myObj.Oceania > 0
-  );
+function findBiggestAndSmallest(numbers) {
+  // Your code goes here...
+  let sorted = numbers.sort(function (a, b) {
+    return a - b;
+  });
+  return numbers.length > 0
+    ? { biggest: sorted[sorted.length - 1], smallest: sorted[0] }
+    : {};
 }
-
-console.log(
-  allContinents([
-    {
-      firstName: "Fatima",
-      lastName: "A.",
-      country: "Algeria",
-      continent: "Africa",
-      age: 25,
-      language: "JavaScript",
-    },
-    {
-      firstName: "Agustín",
-      lastName: "M.",
-      country: "Chile",
-      continent: "Americas",
-      age: 37,
-      language: "C",
-    },
-    {
-      firstName: "Jing",
-      lastName: "X.",
-      country: "China",
-      continent: "Asia",
-      age: 39,
-      language: "Ruby",
-    },
-    {
-      firstName: "Laia",
-      lastName: "P.",
-      country: "Andorra",
-      continent: "Europe",
-      age: 55,
-      language: "Ruby",
-    },
-    {
-      firstName: "Oliver",
-      lastName: "Q.",
-      country: "Australia",
-      continent: "Oceania",
-      age: 65,
-      language: "PHP",
-    },
-  ])
-);
