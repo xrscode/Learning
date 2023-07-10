@@ -233,34 +233,96 @@
 // function findSenior(list) {
 //   var maxAge = Math.max(...list.map((person) => person.age));
 //   return list.filter((person) => person.age === maxAge);
+// // }
+// function isPartyViable(guests) {
+//   const expressionOne = /* NUMBER OF GUESTS */ >= 5;
+//   const expressionTwo = /* TOTAL PAID FOR TICKETS */ >= 100;
+//   return expressionOne && expressionTwo;
 // }
-function isPartyViable(guests) {
-  const expressionOne = /* NUMBER OF GUESTS */ >= 5;
-  const expressionTwo = /* TOTAL PAID FOR TICKETS */ >= 100;
-  return expressionOne && expressionTwo;
+
+// console.log(
+//   isPartyViable([
+//     { name: "diya", paidForTicket: 15 },
+//     { name: "amul", paidForTicket: 2 },
+//     { name: "saleh", paidForTicket: 2 },
+//     { name: "philippa", paidForTicket: 100 },
+//     { name: "philippa", paidForTicket: 100 },
+//   ])
+// );
+
+// function addSoundToPets(pets) {
+//   // write your code here
+//   for(const key in pets){
+//       if(pets[key] = 'cat'){
+//           console.log('i am a cat')
+//           pets.sound  = 'meow!'
+//       }
+//       else if(pets[key] = 'dog'){
+//           console.log('I am a dog')
+//           pets.sound = 'Woof!'
+//       }
+//   }
+//   return pets
+//   }
+function allContinents(list) {
+  // thank you for checking out the Coding Meetup kata :)
+  let a = false;
+  const myObj = { Africa: 0, Americas: 0, Asia: 0, Europe: 0, Oceania: 0 };
+  for (let i = 0; i < list.length; i++) {
+    console.log(list[i].continent);
+    myObj[list[i].continent]++;
+  }
+  console.log(myObj);
+  return (
+    myObj.Africa > 0 &&
+    myObj.Americas > 0 &&
+    myObj.Asia > 0 &&
+    myObj.Europe > 0 &&
+    myObj.Oceania > 0
+  );
 }
 
 console.log(
-  isPartyViable([
-    { name: "diya", paidForTicket: 15 },
-    { name: "amul", paidForTicket: 2 },
-    { name: "saleh", paidForTicket: 2 },
-    { name: "philippa", paidForTicket: 100 },
-    { name: "philippa", paidForTicket: 100 },
+  allContinents([
+    {
+      firstName: "Fatima",
+      lastName: "A.",
+      country: "Algeria",
+      continent: "Africa",
+      age: 25,
+      language: "JavaScript",
+    },
+    {
+      firstName: "Agustín",
+      lastName: "M.",
+      country: "Chile",
+      continent: "Americas",
+      age: 37,
+      language: "C",
+    },
+    {
+      firstName: "Jing",
+      lastName: "X.",
+      country: "China",
+      continent: "Asia",
+      age: 39,
+      language: "Ruby",
+    },
+    {
+      firstName: "Laia",
+      lastName: "P.",
+      country: "Andorra",
+      continent: "Europe",
+      age: 55,
+      language: "Ruby",
+    },
+    {
+      firstName: "Oliver",
+      lastName: "Q.",
+      country: "Australia",
+      continent: "Oceania",
+      age: 65,
+      language: "PHP",
+    },
   ])
 );
-
-function addSoundToPets(pets) {
-  // write your code here
-  for(const key in pets){
-      if(pets[key] = 'cat'){
-          console.log('i am a cat')
-          pets.sound  = 'meow!'
-      }
-      else if(pets[key] = 'dog'){
-          console.log('I am a dog')
-          pets.sound = 'Woof!'
-      }
-  }
-  return pets
-  }
