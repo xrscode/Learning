@@ -334,12 +334,30 @@
 //     },
 //   ])
 // );
-function findBiggestAndSmallest(numbers) {
-  // Your code goes here...
-  let sorted = numbers.sort(function (a, b) {
-    return a - b;
-  });
-  return numbers.length > 0
-    ? { biggest: sorted[sorted.length - 1], smallest: sorted[0] }
-    : {};
-}
+
+//
+// function addUsername(list) {
+//   // thank you for checking out the Coding Meetup kata :)
+//   list.map(function (value) {
+//     value.username =
+//       value.firstName.toLowerCase() +
+//       value.lastName[0].toLowerCase() +
+//       String(new Date().getFullYear() - value.age);
+//   });
+//   return list;
+// }
+// function getAverageAge(list) {
+//   // thank you for checking out the Coding Meetup kata :)
+//   const totalAge = list.reduce(function (a, b) {
+//     return a + b.age;
+//   }, 0);
+
+//   return list.length > 1 ? Math.round(totalAge / list.length) : list[0].age;
+// }
+// function findAdmin(list, lang) {
+//   // thank you for checking out the Coding Meetup kata :)
+//   return list.filter(function (value) {
+//     console.log(value.language);
+//     return value.language === lang && value.githubAdmin === "yes";
+//   });
+// }
