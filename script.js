@@ -361,3 +361,16 @@
 //     return value.language === lang && value.githubAdmin === "yes";
 //   });
 // }
+
+//Duplicate Encoder: 6 kyu:
+//https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/solutions/javascript
+// function duplicateEncode(word) {
+//   // ...
+//   return word
+//     .toLowerCase()
+//     .split("")
+//     .map(function (a, b, c) {
+//       return c.indexOf(a) == c.lastIndexOf(a) ? "(" : ")";
+//     })
+//     .join("");
+// }
