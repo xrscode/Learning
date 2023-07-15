@@ -374,3 +374,69 @@
 //     })
 //     .join("");
 // }
+// function isAgeDiverse(list) {
+//   return list.some((h) => h.age >= 100)
+//     ? [10, 20, 30, 40, 50, 60, 70, 80, 90].every((e) =>
+//         list.some((x) => x.age - e >= 0 && x.age - e <= 9)
+//       )
+//     : false;
+// }
+
+// function isAgeDiverse(list) {
+//   return list.some(function (a) {
+//     a.age >= 100;
+//   })
+//     ? [10, 20, 30, 40, 50, 60, 70, 80, 90].every(function (b) {
+//         list.some(function (c) {
+//           c.age - b >= 0 && c.age - b <= 9;
+//         });
+//       })
+//     : false;
+// }
+
+//Is Pangram?  kyu - 6;
+// https://www.codewars.com/kata/545cedaa9943f7fe7b000048/solutions/javascript
+// function isPangram(string) {
+//   //...
+//   return [
+//     "a",
+//     "b",
+//     "c",
+//     "d",
+//     "e",
+//     "f",
+//     "g",
+//     "h",
+//     "i",
+//     "j",
+//     "k",
+//     "l",
+//     "m",
+//     "n",
+//     "o",
+//     "p",
+//     "q",
+//     "r",
+//     "s",
+//     "t",
+//     "u",
+//     "v",
+//     "w",
+//     "x",
+//     "y",
+//     "z",
+//   ].every(function (a) {
+//     string
+//       .toLowerCase()
+//       .split("")
+//       .some(function (b) {
+//         return a === b;
+//       });
+//   });
+// }
+
+//https://www.codewars.com/kata/583203e6eb35d7980400002a/solutions
+//return the total number of smiling faces in the array
+// function countSmileys(arr) {
+//   return arr.filter((x) => /^[:;][-~]?[)D]$/.test(x)).length;
+// }
