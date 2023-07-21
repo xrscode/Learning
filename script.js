@@ -440,3 +440,23 @@
 // function countSmileys(arr) {
 //   return arr.filter((x) => /^[:;][-~]?[)D]$/.test(x)).length;
 // }
+
+//Extract Last Names of People Named Michael: 6kyu.
+// https://www.codewars.com/kata/580741302e14acaef900015a/train/javascript;
+function getMichaelLastName(inputText) {
+  // your awesome code here
+  inputText = inputText.split(" ");
+  const arr = [];
+  for (let i = 0; i < inputText.length; i++) {
+    if (inputText[i] === "Michael") {
+      if (inputText[i + 1][0] === inputText[i + 1][0].toUpperCase()) {
+        arr.push(inputText[i + 1].replace(/\W/, "").trim());
+      }
+    }
+  }
+  return arr;
+}
+
+console.log(getMichaelLastName("Hello Michael Jordan."));
+
+console.log("Hello.".replace(/\W/, "").length);
