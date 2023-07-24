@@ -441,22 +441,60 @@
 //   return arr.filter((x) => /^[:;][-~]?[)D]$/.test(x)).length;
 // }
 
-//Extract Last Names of People Named Michael: 6kyu.
+// Extract Last Names of People Named Michael: 6kyu.
 // https://www.codewars.com/kata/580741302e14acaef900015a/train/javascript;
-function getMichaelLastName(inputText) {
-  // your awesome code here
-  inputText = inputText.split(" ");
-  const arr = [];
-  for (let i = 0; i < inputText.length; i++) {
-    if (inputText[i] === "Michael") {
-      if (inputText[i + 1][0] === inputText[i + 1][0].toUpperCase()) {
-        arr.push(inputText[i + 1].replace(/\W/, "").trim());
-      }
-    }
-  }
-  return arr;
-}
+// function getMichaelLastName(inputText) {
+//   // your awesome code here
+//   inputText = inputText.split(" ");
+//   const arr = [];
+//   for (let i = 0; i < inputText.length; i++) {
+//     if (inputText[i] === "Michael") {
+//       if (inputText[i + 1][0] === inputText[i + 1][0].toUpperCase()) {
+//         arr.push(inputText[i + 1].replace(/\W/, "").trim());
+//       }
+//     }
+//   }
+//   return arr;
+// }
+// function getMichaelLastName(text) {
+//   return text.match(/Michael [A-Z][a-z]+/g).map(function (value) {
+//     return value.split(" ")[1];
+//   });
+// }
+// console.log(
+//   getMichaelLastName("Hi Michael Jordan. Michael Jackson, how are you")
+// );
 
-console.log(getMichaelLastName("Hello Michael Jordan."));
+//Function Count the Odds! 6kyu:
+// https://www.codewars.com/kata/54da5a58ea159efa38000836/solutions/javascript
+// function findOdd(A) {
+//   let obj = {};
+//   A.forEach(function (value) {
+//     return value in obj ? (obj[value] += 1) : (obj[value] = 1);
+//   });
+//   for (key in obj) {
+//     if (obj[key] % 2 === 1) {
+//       return Number(key);
+//     }
+//   }
+// }
+// console.log(findOdd([1, 2, 3, 3, 1]));
+// function gatherFeedback(feedbackArray) {
+//   // Your code goes here...
 
-console.log("Hello.".replace(/\W/, "").length);
+//   let feedbackObject = {
+//     positive: 0,
+//     negative: 0,
+//     neutral: 0,
+//   };
+//   for (let i = 0; i < feedbackArray.length; i++) {
+//     if (feedbackArray[i][1] >= 7 && feedbackArray[i][1] <= 10) {
+//       feedbackObject.positive++;
+//     } else if (feedbackArray[i][1] >= 4 && feedbackArray[i][1] <= 6) {
+//       feedbackObject.neutral++;
+//     } else {
+//       feedbackObject.negative++;
+//     }
+//   }
+//   return feedbackObject;
+// }
