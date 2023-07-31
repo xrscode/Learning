@@ -348,48 +348,39 @@
 // pickWinners([6, 7, 12, 49]);
 // // should return [{seat: 1, ticketCost: 7}, {seat: 3, ticketCost: 49}]
 
-//Gathering Feedback
-function gatherFeedback(feedbackArray) {
-  // Your code goes here...
-  let myobj = { positive: 0, negative: 0, neutral: 0 };
-
-  for (let i = 0; i < feedbackArray.length; i++) {
-    let subArray = feedbackArray[i];
-    for (let k = 0; k < subArray.length; k++) {
-      if (typeof subArray[k] === "number") {
-        if (subArray[k] >= 7 && subArray[k] <= 10) {
-          //console.log(`Positive: ${subArray[k]}.`);
-          myobj.positive += 1;
-        } else if (subArray[k] >= 4 && subArray[k] <= 6) {
-          //console.log(`Neutral: ${subArray[k]}.`);
-          myobj.neutral += 1;
-        } else if (subArray[k] <= 3 && subArray[k] >= 0) {
-          //console.log(`Negative: ${subArray[k]}.`);
-          myobj.negative += 1;
-        }
-      } //Value
-    }
-  }
-  //console.log(myobj);
-  return myobj;
-}
-gatherFeedback([
-  ["maddie", 10],
-  ["jatinder", 3],
-  ["rose", 6],
-]);
-// returns {positive: 1, negative: 1, neutral:1}
-
-gatherFeedback([
-  ["maddie", 10],
-  ["jatinder", 10],
-  ["rose", 10],
-]);
-// returns {positive: 3, negative: 0, neutral:0}
-
-gatherFeedback([
-  ["maddie", 10],
-  ["jatinder", 10],
-  ["rose", 1],
-]);
-// returns {positive: 2, negative: 1, neutral:0}
+const game = {
+  team1: "Bayern Munich",
+  team2: "Borrussia Dortmund",
+  players: [
+    [
+      "Neuer",
+      "Pavard",
+      "Martinez",
+      "Alaba",
+      "Davies",
+      "Kimmich",
+      "Goretzka",
+      "Coman",
+      "Muller",
+      "Gnarby",
+      "Lewandowski",
+    ],
+    [
+      "Burki",
+      "Schulz",
+      "Hummels",
+      "Akanji",
+      "Hakimi",
+      "Weigl",
+      "Witsel",
+      "Hazard",
+      "Brandt",
+      "Sancho",
+      "Gotze",
+    ],
+  ],
+  score: "4:0",
+  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+  date: "Nov 9th, 2037",
+  odds: { team1: 1.33, x: 3.25, team2: 6.5 },
+};
