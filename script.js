@@ -34,3 +34,18 @@ const game = {
   date: "Nov 9th, 2037",
   odds: { team1: 1.33, x: 3.25, team2: 6.5 },
 };
+
+const [players1, players2] = game.players;
+const [gk, ...fieldPlayers] = players1;
+const allPlayers = [...players1, ...players2];
+
+const {
+  odds: { team1, x: draw, team2 },
+} = game;
+
+function printGoals(...players) {
+  console.log(`${players.length} goals were scored.`);
+}
+
+team1 < team2 && console.log("Team 1 is more likely to win.");
+team1 > team2 && console.log("Team 2 is more likely to win.");
