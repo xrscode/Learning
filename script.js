@@ -24,9 +24,9 @@ const restaurant = {
   mainMenu: ["Pizza", "Pasta", "Risotto"],
 
   // ES6 enhanced object literals
-  openingHours,
+  openingHours: openingHours,
 
-  order(starterIndex, mainIndex) {
+  order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
@@ -51,6 +51,33 @@ const restaurant = {
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 // for (const item of menu) console.log(item);
 
-for (const [i, element] of menu.entries()) {
-  console.log(`${i + 1}: ${element}`);
+// for (const [i, element] of menu.entries()) {
+//   console.log(`${i + 1}: ${element}`);
+// }
+
+//Optional Chaining
+// console.log(restaurant.openingHours.mon?.open);
+// console.log(restaurant.openingHours?.mon?.open);
+
+// const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+// for (const day of days) {
+//   const open = restaurant.openingHours[day]?.open ?? "closed";
+//   console.log(`On day: ${day}, we open at ${open}`);
+// }
+const properties = Object.keys(openingHours);
+let openStr = `We are open on ${properties.length} days:`;
+for (const day of properties) {
+  openStr += ` ${day},`;
+}
+console.log(openStr);
+
+//Property Values
+const values = Object.values(openingHours);
+//console.log(values);
+
+//Entire Object;
+const entries = Object.entries(openingHours);
+console.log(entries);
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
