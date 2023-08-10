@@ -63,10 +63,36 @@
 // console.log(maskCreditCard(12345678)); // '****5678'.
 
 //Repeat:
-const importantMessage = "Bad Weather.  All departures delayed. ";
-console.log(importantMessage.repeat(2));
+// const importantMessage = "Bad Weather.  All departures delayed. ";
+// console.log(importantMessage.repeat(2));
 
-const planesInLine = function (n) {
-  console.log(`There are ${n} planes in line. `.repeat(n));
-};
-console.log(planesInLine(4));
+// const planesInLine = function (n) {
+//   console.log(`There are ${n} planes in line. `.repeat(n));
+// };
+// console.log(planesInLine(4));
+
+//Code Challenge 4
+// document.body.append(document.createElement("textarea"));
+// document.body.append(document.createElement("button"));
+// document.querySelector("button").addEventListener("click", function () {
+//   const text = document.querySelector("textarea").value;
+//   const rows = text.split("\n");
+//   for (let i = 0; i < rows.length; i++) {
+//     const [first, second] = rows[i].toLowerCase().trim().split("_");
+//     const output = `${first}${second.replace(
+//       second[0],
+//       second[0].toUpperCase()
+//     )}`;
+//     console.log(`${output.padEnd(20)} ${"✅".repeat(i + 1)}`);
+//   }
+// });
+
+//Code Challenge 5
+const flights =
+  "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
+
+for (const flight of flights.split("+")) {
+  const [type, from, to, time] = flight.split(";");
+  const output = `${type} ${from} ${to} ${time}`;
+  console.log(output);
+}
