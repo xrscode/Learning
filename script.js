@@ -24,27 +24,45 @@
 // createBooking("LH123", 2, undefined);
 // createBooking("EZY8915", undefined, 50);
 
-const flight = "LH234";
-const passengerDYLAN = {
-  name: "Dylan Dog",
-  passport: 12345,
+// const flight = "LH234";
+// const passengerDYLAN = {
+//   name: "Dylan Dog",
+//   passport: 12345,
+// };
+
+// const checkIn = function (flightNum, passenger) {
+//   flightNum = "EZY8913";
+//   passengerDYLAN.name = "Mr. Dylan Dog";
+
+//   if (passenger.passport === 12345) {
+//     console.log("Check In");
+//   } else {
+//     console.log("Passport Number Incorrect");
+//   }
+// };
+
+// checkIn(flight, passengerDYLAN);
+// console.log(passengerDYLAN, flight);
+
+// //Advanced Functions
+// const newPassport = function (person) {
+//   person.passport = Math.trunc(Math.random() * 1000000);
+// };
+
+//CallBack Functions
+const oneWord = function (str) {
+  return str.replace(/ /g, "").toLowerCase();
+}; //Function that replaces spaces in strings with 'nothing'.  Deletes spaces.
+
+const upperFirstWord = function (str) {
+  const [first, ...others] = str.split(" ");
+  return [first.toUpperCase(), ...others].join(" ");
+}; //Function that replaces first word with all uppercase letters.
+
+//Higher-Order Function:
+const transformer = function (str, fn) {
+  console.log(`Original string: ${str}.`);
+  console.log(`Transofrmed string: ${fn(str)}.`);
+  console.log(`Transformed by: ${fn.name}`);
 };
-
-const checkIn = function (flightNum, passenger) {
-  flightNum = "EZY8913";
-  passengerDYLAN.name = "Mr. Dylan Dog";
-
-  if (passenger.passport === 12345) {
-    console.log("Check In");
-  } else {
-    console.log("Passport Number Incorrect");
-  }
-};
-
-checkIn(flight, passengerDYLAN);
-console.log(passengerDYLAN, flight);
-
-//Advanced Functions
-const newPassport = function (person) {
-  person.passport = Math.trunc(Math.random() * 1000000);
-};
+transformer("JavaScript is the best.", upperFirstWord);
