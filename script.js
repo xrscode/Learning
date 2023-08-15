@@ -49,20 +49,81 @@
 //   person.passport = Math.trunc(Math.random() * 1000000);
 // };
 
-//CallBack Functions
-const oneWord = function (str) {
-  return str.replace(/ /g, "").toLowerCase();
-}; //Function that replaces spaces in strings with 'nothing'.  Deletes spaces.
+// //CallBack Functions
+// const oneWord = function (str) {
+//   return str.replace(/ /g, "").toLowerCase();
+// }; //Function that replaces spaces in strings with 'nothing'.  Deletes spaces.
 
-const upperFirstWord = function (str) {
-  const [first, ...others] = str.split(" ");
-  return [first.toUpperCase(), ...others].join(" ");
-}; //Function that replaces first word with all uppercase letters.
+// const upperFirstWord = function (str) {
+//   const [first, ...others] = str.split(" ");
+//   return [first.toUpperCase(), ...others].join(" ");
+// }; //Function that replaces first word with all uppercase letters.
 
-//Higher-Order Function:
-const transformer = function (str, fn) {
-  console.log(`Original string: ${str}.`);
-  console.log(`Transofrmed string: ${fn(str)}.`);
-  console.log(`Transformed by: ${fn.name}`);
+// //Higher-Order Function:
+// const transformer = function (str, fn) {
+//   console.log(`Original string: ${str}.`);
+//   console.log(`Transofrmed string: ${fn(str)}.`);
+//   console.log(`Transformed by: ${fn.name}`);
+// };
+// transformer("JavaScript is the best.", upperFirstWord);
+
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+// const greeterHey = greet("Hey");
+// greeterHey("Dylan");
+// greet("Hello")("Bean");
+
+// const greet = (greeting) => (name) => console.log(`${greeting} ${name}`);
+// greet("Hi")("BillieBean");
+
+const lufthansa = {
+  airline: "Lufthansa",
+  iataCode: "LH",
+  bookings: [],
+  //book: function() {};
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline}, flight number: ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name: name });
+  },
 };
-transformer("JavaScript is the best.", upperFirstWord);
+const easyJet = {
+  airline: "Easy Jet",
+  iataCode: "EZY",
+  bookings: [],
+};
+
+//const book = lufthansa.book;
+lufthansa.book.call(easyJet, 23, "Quinn");
+//console.log(easyJet);
+
+// //Apply Method
+// const person = {
+//   fullName: function (city, country) {
+//     return this.firstName + " " + this.lastName + "," + city + "," + country;
+//   },
+// };
+
+// const person1 = {
+//   firstName: "John",
+//   lastName: "Doe",
+// };
+
+// person.fullName.apply(person1, ["Oslo", "Norway"]);
+
+// const person = {
+//   fullName: function (city, country) {
+//     return this.firstName + " " + this.lastName + "," + city + "," + country;
+//   },
+// };
+
+// const person1 = {
+//   firstName: "John",
+//   lastName: "Doe",
+// };
+
+// person.fullName.call(person1, "Oslo", "Norway");
