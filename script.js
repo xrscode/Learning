@@ -79,26 +79,26 @@
 // const greet = (greeting) => (name) => console.log(`${greeting} ${name}`);
 // greet("Hi")("BillieBean");
 
-const lufthansa = {
-  airline: "Lufthansa",
-  iataCode: "LH",
-  bookings: [],
-  //book: function() {};
-  book(flightNum, name) {
-    console.log(
-      `${name} booked a seat on ${this.airline}, flight number: ${this.iataCode}${flightNum}`
-    );
-    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name: name });
-  },
-};
-const easyJet = {
-  airline: "Easy Jet",
-  iataCode: "EZY",
-  bookings: [],
-};
+// const lufthansa = {
+//   airline: "Lufthansa",
+//   iataCode: "LH",
+//   bookings: [],
+//   //book: function() {};
+//   book(flightNum, name) {
+//     console.log(
+//       `${name} booked a seat on ${this.airline}, flight number: ${this.iataCode}${flightNum}`
+//     );
+//     this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name: name });
+//   },
+// };
+// const easyJet = {
+//   airline: "Easy Jet",
+//   iataCode: "EZY",
+//   bookings: [],
+// };
 
-//const book = lufthansa.book;
-lufthansa.book.call(easyJet, 23, "Quinn");
+// const book = lufthansa.book;
+// lufthansa.book.call(easyJet, 23, "Quinn");
 //console.log(easyJet);
 
 // //Apply Method
@@ -127,3 +127,26 @@ lufthansa.book.call(easyJet, 23, "Quinn");
 // };
 
 // person.fullName.call(person1, "Oslo", "Norway");
+//Bind
+const lufthansa = {
+  airline: "Lufthansa",
+  iataCode: "LH",
+  bookings: [],
+  //book: function() {};
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline}, flight number: ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name: name });
+  },
+};
+const easyJet = {
+  airline: "Easy Jet",
+  iataCode: "EZY",
+  bookings: [],
+};
+const book = lufthansa.book;
+const bookEZY23 = book.bind(easyJet, 23);
+console.log(bookEZY23("Bean")); //Bean booked a seat on Easy Jet, flight number: EZY23;
+
+//With Event Listeners
