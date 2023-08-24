@@ -178,11 +178,48 @@
 
 //Coding Challenge
 //Build a simple Poll App.
-const poll = {
-  question: "What is your favourite programming language?",
-  options: ["0: JavaScript", "1: Python", "2: Rust", "3: C++"],
-  answers: new Array(4).fill(0),
-  registerNewAnswer() {
-    const q = prompt();
-  },
-};
+// const poll = {
+//   question: "What is your favourite programming language?",
+//   options: ["0: JavaScript", "1: Python", "2: Rust", "3: C++"],
+//   answers: new Array(4).fill(0),
+//   registerNewAnswer() {
+//     //Prompt Question:
+//     const q = prompt(
+//       `${
+//         this.question
+//       }\nChoose from the following options:\n\n${this.options.join(", \n")}`
+//     );
+//     //Register Answer:
+//     if (/^[0-3]$/.test(q)) {
+//       console.log(
+//         `You have selected ${this.options.find((x) => {
+//           return x.includes(`${q}: `);
+//         })}.  Thank you!`
+//       );
+//       this.answers[q]++;
+//     } else {
+//       console.log(`${q}: Please choose from options:  0 - 4.`);
+//     }
+//     this.displayResults();
+//   },
+//   //Display Results:
+//   displayResults() {
+//     console.log(`The current totals:
+//     \nJavaScript: ${this.answers[0]}
+//     \nPython: ${this.answers[1]}
+//     \nRust: ${this.answers[2]}
+//     \nC++: ${this.answers[3]}`);
+//   },
+// };
+// document
+//   .querySelector(".poll")
+//   .addEventListener("click", poll.registerNewAnswer.bind(poll));
+
+//Immediately Invoked Function Expressions (IIFE)
+(function () {
+  console.log("Function");
+  const isPriavte = 23;
+})();
+
+//Arrow Function IIFEE:
+(() => console.log("This is an arrow function"))();
