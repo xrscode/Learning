@@ -223,3 +223,25 @@
 
 //Arrow Function IIFEE:
 (() => console.log("This is an arrow function"))();
+
+const secureBooking = function () {
+  let passengerCount = 0;
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers.`);
+  };
+};
+
+const booker = secureBooking();
+
+booker(); //1 passengers.
+booker(); //2 passengers.
+booker();
+
+const arr = new Array(4).fill(new Array(4).fill(null));
+console.log(arr);
+
+function validMobileNumber(mobileNumber) {
+  // Your code goes here...
+  return /^(07)\d{9}$|^\+447\d{9}$|^(00447)\d{9}$/.test(mobileNumber);
+}
