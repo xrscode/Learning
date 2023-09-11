@@ -90,8 +90,26 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 //   }
 // }
 
-const forEach = movements.forEach((x) => {
-  return x > 0
-    ? console.log(`You deposited ${Math.abs(x)}.`)
-    : console.log(`You withdrew ${Math.abs(x)}`);
+// const forEach = movements.forEach((x) => {
+//   return x > 0
+//     ? console.log(`You deposited ${Math.abs(x)}.`)
+//     : console.log(`You withdrew ${Math.abs(x)}`);
+// });
+
+//MAP
+// const currencies = new Map([
+//   ["USD", "United States Dollar"],
+//   ["EURO", "Euro"],
+//   ["GBP", "British Pound Sterling"],
+// ]);
+// console.log(currencies);
+
+// currencies.forEach(function (value, key, map) {
+//   console.log(`${key}: ${value}`);
+// });
+
+//Set
+const currenciesUnique = new Set(["USD", "GBP", "USD", "EUR", "EUR"]);
+currenciesUnique.forEach(function (value, _, map) {
+  console.log(`${key}: ${value}`);
 });
