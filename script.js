@@ -109,7 +109,21 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // });
 
 //Set
-const currenciesUnique = new Set(["USD", "GBP", "USD", "EUR", "EUR"]);
-currenciesUnique.forEach(function (value, _, map) {
-  console.log(`${key}: ${value}`);
-});
+// const currenciesUnique = new Set(["USD", "GBP", "USD", "EUR", "EUR"]);
+// currenciesUnique.forEach(function (value, _, map) {
+//   console.log(`${key}: ${value}`);
+// });
+
+// //Coding Challenge 1
+// function checkDogs(dogsJulia, dogsKate) {
+//   const tempArr = dogsJulia.slice(1, dogsJulia.length - 2);
+//   const totalDogs = tempArr.concat(dogsKate);
+//   return totalDogs.forEach((x, i) => {
+//     return x >= 3
+//       ? console.log(`Dog ${i + 1} is an adult at ${x} years old.`)
+//       : console.log(`Dog ${i + 1} is still a puppy at ${x} years old.`);
+//   });
+// }
+// const dogsJulia = [3, 5, 2, 12, 7];
+// const dogsKate = [4, 1, 15, 8, 3];
+// checkDogs(dogsJulia, dogsKate);
