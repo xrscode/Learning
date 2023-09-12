@@ -127,3 +127,39 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // const dogsJulia = [3, 5, 2, 12, 7];
 // const dogsKate = [4, 1, 15, 8, 3];
 // checkDogs(dogsJulia, dogsKate);
+
+// //Coding Challenge 2.
+// const dogsJulia = [5, 2, 4, 1, 15, 8, 3];
+// const dogsKate = [16, 6, 10, 5, 6, 1, 4];
+// //1.  Calculate the dog age in human years.
+// const humanYearsJulia = dogsJulia
+//   .map((x) => {
+//     return x <= 2 ? x * 2 : 16 + x * 4;
+//   })
+//   .filter((a) => {
+//     return a >= 18;
+//   });
+// const humanYearsKate = dogsKate
+//   .map((x) => {
+//     return x <= 2 ? x * 2 : 16 + x * 4;
+//   })
+//   .filter((a) => {
+//     return a >= 18;
+//   });
+
+// //Average Ages:
+// //Julia
+// const averageAgeJulia =
+//   humanYearsJulia.reduce((a, b) => {
+//     return a + b;
+//   }) / humanYearsJulia.length;
+// //Kate
+// const averageAgeKate = Math.round(
+//   humanYearsKate.reduce((a, b) => {
+//     return a + b;
+//   }) / humanYearsKate.length
+// );
+// console.log(humanYearsJulia);
+// console.log(humanYearsKate);
+// console.log(`The average age of Julias dogs is: ${averageAgeJulia}.`);
+// console.log(`The average age of Kates dogs is: ${averageAgeKate}.`);
