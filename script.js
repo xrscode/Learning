@@ -163,3 +163,35 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // console.log(humanYearsKate);
 // console.log(`The average age of Julias dogs is: ${averageAgeJulia}.`);
 // console.log(`The average age of Kates dogs is: ${averageAgeKate}.`);
+
+// const test1 = [5, 2, 4, 1, 15, 8, 3];
+// const test2 = [16, 6, 10, 5, 6, 1, 4];
+// const calcAverageHumanAge = (arr) => {
+//   return Math.round(
+//     arr
+//       .map((x) => {
+//         return x <= 2 ? x * 2 : 16 + x * 4;
+//       })
+//       .filter((a) => {
+//         return a >= 18;
+//       })
+//       .reduce((a, b) => {
+//         return a + b;
+//       }) / arr.length
+//   );
+// };
+
+// console.log(calcAverageHumanAge(test1));
+// console.log(calcAverageHumanAge(test2));
+
+//FIND
+
+// Data
+const account1 = {
+  owner: "Jonas Schmedtmann",
+  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  interestRate: 1.2, // %
+  pin: 1111,
+};
+const test = account1.movements.find((mov) => mov < 0);
+console.log(test); //Returns -400
