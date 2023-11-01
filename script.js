@@ -85,4 +85,61 @@
 // console.log(dice);
 
 //Arrays Practise
-const bankDepositSum = 
+// Data
+const account1 = {
+  owner: "Jonas Schmedtmann",
+  movements: [200, 450, -400, 3000, -650, -130, 70, 1300],
+  interestRate: 1.2, // %
+  pin: 1111,
+};
+
+const account2 = {
+  owner: "Jessica Davis",
+  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+  interestRate: 1.5,
+  pin: 2222,
+};
+
+const account3 = {
+  owner: "Steven Thomas Williams",
+  movements: [200, -200, 340, -300, -20, 50, 400, -460],
+  interestRate: 0.7,
+  pin: 3333,
+};
+
+const account4 = {
+  owner: "Sarah Smith",
+  movements: [430, 1000, 700, 50, 90],
+  interestRate: 1,
+  pin: 4444,
+};
+
+const accounts = [account1, account2, account3, account4];
+
+//Exercise 1.
+//Total number of positive deposits.
+const bankDepositSum = accounts
+  .flatMap((x) => x.movements)
+  .filter((x) => x > 0)
+  .reduce((a, b) => {
+    return a + b;
+  });
+console.log(bankDepositSum);
+
+//Total number of negative deposits.
+const negDepositSum = accounts
+  .flatMap((x) => x.movements)
+  .filter((x) => x < 0)
+  .reduce((a, b) => {
+    return a + b;
+  });
+console.log(negDepositSum);
+
+//Exercise 2.
+//Count number of deposits in bank at least 1000.
+const numDeposits1000 = accounts
+  .flatMap((x) => x.movements)
+  .reduce((a, b) => {
+    return b >= 1000 ? a + 1 : a;
+  }, 0);
+console.log(numDeposits1000); //Returns 6.
