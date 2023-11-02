@@ -207,9 +207,12 @@ const dogs = [
   { weight: 8, curFood: 200, owners: ["Matilda"] },
   { weight: 13, curFood: 275, owners: ["Sarah", "John"] },
   { weight: 32, curFood: 340, owners: ["Michael"] },
+  { weight: 32, curFood: 370, owners: ["Dylan"] },
+  { weight: 32, curFood: 375, owners: ["Peter"] },
 ];
 
 //Step 1.
+console.log(`------ STEP 1 ------`);
 dogs.forEach(
   (x) => (x.recommendedFood = Math.round(x.weight ** 0.75 * 28) / 100)
 );
@@ -217,16 +220,92 @@ console.log(dogs);
 
 //Step 2.
 //Sarahs Dog.
+console.log(`------ STEP 2 ------`);
 const sarahDog = dogs.find((x) => x.owners.includes("Sarah"));
+const recFood = sarahDog.recommendedFood;
+const current = (sarahDog.curFood / 100).toFixed(2);
+if (current - recFood > 0) {
+  console.log(
+    `Sarah's dog is currently eating too much.  The dog is currently eating ${current}kg per day.  The recommended amount is ${recFood}kg per day.  The dog is currently eating ${(
+      current - recFood
+    ).toFixed(2)})}kg too much!`
+  );
+} else if (current - recFood === 0) {
+  console.log(`Sarah's dog is eating the correct amount.`);
+} else {
+  console.log(
+    `Sarah's dog is not eating enough.  Currently her dog is eating ${current}kg.  The dog should be eating, ${recFood}kg.  Increase the food allowance by: ${(
+      recFood - current
+    ).toFixed(2)}kg per day.`
+  );
+}
+
+//Step 3.
+//Create an array of the names of owners who's dogs eat too much.
+console.log("----- STEP 3 ------");
+const dogOwnersTooMuch = dogs.reduce((arr, cur) => {
+  (cur.curFood / 100).toFixed(2) > cur.recommendedFood
+    ? arr.push(cur.owners)
+    : arr;
+  return arr.flat();
+}, []);
+console.log(`Owners whose dogs eat too much: ${dogOwnersTooMuch.join(", ")}.`);
+
+//Step 4.
+console.log(`------ STEP 4 ------`);
+const dogOwnersTooLittle = dogs.reduce((arr, cur) => {
+  (cur.curFood / 100).toFixed(2) < cur.recommendedFood
+    ? arr.push(cur.owners)
+    : arr;
+  return arr.flat();
+}, []);
 console.log(
-  `Sarahs dog is eating: ${
-    Math.round(sarahDog.curFood) / 100
-  }kg.  The amount her dog should eat is: ${sarahDog.recommendedFood}kg`
+  `Owners whose dogs eat too little: ${dogOwnersTooLittle.join(", ")}`
 );
-if (Math.round(sarahDog.curFood) / 100 >= sarahDog.recommendedFood * 1.1) {
-  console.log("Too much");
-}
-if (Math.round(sarahDog.curFood) / 100 <= sarahDog.recommendedFood / 1.1) {
-  console.log("Too little");
-}
-if()
+
+//Step 5.
+console.log("-----STEP 5-----");
+const correctAmount = dogs.some((x) => {
+  console.log((x.curFood / 100).toFixed(2), x.recommendedFood);
+  return (x.curFood / 100).toFixed(2) - x.recommendedFood === 0;
+});
+console.log(
+  `Currently ${correctAmount ? "some" : "no"} dogs eat the correct amount.`
+);
+
+//Step 6.
+console.log("----Step 6 ------");
+const acceptibleAmount = dogs.some((x) => {
+  console.log((x.curFood / 100).toFixed(2), x.recommendedFood);
+  return (
+    (x.curFood / 100).toFixed(2) <= x.recommendedFood * 1.1 &&
+    (x.curFood / 100).toFixed(2) >= x.recommendedFood / 1.1
+  );
+});
+console.log(
+  `Currently there are ${
+    acceptibleAmount ? "some" : "no"
+  } dogs that eat an acceptible amount.`
+);
+
+//Step 7
+console.log("----- STEP 7 ------");
+const arrAceptible = dogs.reduce((arr, cur) => {
+  (cur.curFood / 100).toFixed(2) <= cur.recommendedFood * 1.1 &&
+  (cur.curFood / 100).toFixed(2) >= cur.recommendedFood * 0.9
+    ? arr.push(cur.owners)
+    : arr;
+  return arr.flat();
+}, []);
+console.log(
+  `These are the dog owners who's dog eat an acceptible amount: ${arrAceptible.join(
+    ", "
+  )}.`
+);
+
+//Step 8
+console.log("----- STEP 8 -----");
+const dogsSorted = Array.from(dogs).sort((a, b) => {
+  return a.recommendedFood - b.recommendedFood;
+});
+console.log(dogsSorted);
