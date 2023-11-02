@@ -83,7 +83,7 @@ const inputClosePin = document.querySelector(".form__input--pin");
 
 const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = "";
-
+  //HERE
   const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
 
   movs.forEach(function (mov, i) {
@@ -154,6 +154,18 @@ const updateUI = function (acc) {
 ///////////////////////////////////////
 // Event handlers
 let currentAccount;
+
+//FAKE ALWAYS LOGGED IN.
+currentAccount = account1;
+updateUI(currentAccount);
+containerApp.style.opacity = 100;
+const now = new Date();
+const day = `${now.getDate()}`.padStart(2, "0");
+const month = String(now.getMonth() + 1).padStart(2, "0");
+const year = now.getFullYear();
+const hour = now.getHours();
+const minutes = String(now.getMinutes()).padEnd(2, "0");
+labelDate.textContent = `${day}/${month}/${year}, ${hour}:${minutes}`;
 
 btnLogin.addEventListener("click", function (e) {
   // Prevent form from submitting
@@ -387,13 +399,45 @@ console.log(12n / 3n); //4n
 //Creating Dates
 console.log("-----CREATING DATES & Time-----");
 //Create a date:
-const now = new Date();
-console.log(now); //Thu Nov 02 2023 18:28:17 (Time this code was run.);
+//const now = new Date();
+//console.log(now); //Thu Nov 02 2023 18:28:17 (Time this code was run.);
 
 console.log(new Date("Sep 16 1987")); //Wed Sep 16 1987.
-console.log(new Date("Sep 16 1987") > new Date(now)); //false
-console.log(new Date("Sep 16 1987") < new Date(now)); //true
+//console.log(new Date("Sep 16 1987") > new Date(now)); //false
+//console.log(new Date("Sep 16 1987") < new Date(now)); //true
 console.log(new Date(account1.movementsDates[0])); //Mon November 18th 2019 - the time created.
 
 console.log(new Date(2037, 10, 19, 15, 23, 5)); //November 19th 2037 15:23:05.
 console.log(new Date(2037, 10, 31, 15, 23, 5)); //December 01 2037 15:23:05.
+
+console.log("Convert from days to milliseconds");
+console.log(new Date(0)); //January 01st.
+console.log(new Date(3 * 24 * 60 * 60 * 1000)); //January 04 (3 days later).
+//3 days * 24 Hours * 60 minutes * 60 seconds * milliseconds;
+
+//Working with Dates;
+console.log(`-----Working with Dates-----`);
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future); //Thu Nov 19 2037 15:23:00;
+console.log(future.getFullYear()); //2037
+console.log(future.getMonth()); //10 (0 based!)
+console.log(future.getDay()); //4 (Monday is day 1, Thursday is day 4. NOT 0 Based.)
+console.log(future.getMinutes()); //23 minutes.
+console.log(future.getSeconds()); //0 as no seconds were set.
+console.log(future.toISOString()); //2037-11-19T15:23:00.00.000Z
+console.log(future.getTime()); // How many milliseconds passed since 1970 (2142256980000).
+console.log(new Date(2142256980000)); //Thu Nov 19 2037 15:23:00.
+
+future.setFullYear(2040);
+console.log(future); //Converts future to the year 2040.
+
+//Operations with Dates
+console.log(`-----Operations with Dates-----`);
+const future1 = new Date(2024, 2, 1, 9);
+const future2 = new Date(2024, 2, 4, 9);
+console.log(future1); //Friday March 1st 09:00 GMT.
+console.log(Number(future1)); //1709283600000
+
+const calcDaysPassed = (date1, date2) =>
+  ((date2 - date1) / 1000) * 60 * 60 * 24;
+const days1 = calcDaysPassed(future1, future2);
