@@ -84,10 +84,20 @@ const inputClosePin = document.querySelector(".form__input--pin");
 const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = "";
   //HERE
+
   const movs = sort ? movements.slice().sort((a, b) => a - b) : movements;
 
   movs.forEach(function (mov, i) {
     const type = mov > 0 ? "deposit" : "withdrawal";
+    const date = new Date(account1.movementsDates[i]);
+    const day = `${date.getDate()}`.padStart(2, 0);
+    const month = `${date.getMonth() + 1}`.padStart(2, 0);
+    const year = date.getFullYear();
+    const displayDate = `${day}/${month}/${year}`;
+
+    const calcDaysPassed = function (date1, date2) {
+      return Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
+    };
 
     const html = `
       <div class="movements__row">
@@ -159,13 +169,13 @@ let currentAccount;
 currentAccount = account1;
 updateUI(currentAccount);
 containerApp.style.opacity = 100;
-const now = new Date();
-const day = `${now.getDate()}`.padStart(2, "0");
-const month = String(now.getMonth() + 1).padStart(2, "0");
-const year = now.getFullYear();
-const hour = now.getHours();
-const minutes = String(now.getMinutes()).padEnd(2, "0");
-labelDate.textContent = `${day}/${month}/${year}, ${hour}:${minutes}`;
+const nowx = new Date();
+const dayx = `${nowx.getDate()}`.padStart(2, "0");
+const monthx = String(nowx.getMonth() + 1).padStart(2, "0");
+const yearx = nowx.getFullYear();
+const hourx = nowx.getHours();
+const minutesx = String(nowx.getMinutes()).padEnd(2, "0");
+labelDate.textContent = `${dayx}/${monthx}/${yearx}, ${hourx}:${minutesx}`;
 
 btnLogin.addEventListener("click", function (e) {
   // Prevent form from submitting
@@ -438,6 +448,70 @@ const future2 = new Date(2024, 2, 4, 9);
 console.log(future1); //Friday March 1st 09:00 GMT.
 console.log(Number(future1)); //1709283600000
 
-const calcDaysPassed = (date1, date2) =>
-  ((date2 - date1) / 1000) * 60 * 60 * 24;
-const days1 = calcDaysPassed(future1, future2);
+// const calcDaysPassed = function (date1, date2) {
+//   return Math.round(Math.abs(date2 - date1) / (1000 * 60 * 60 * 24));
+// };
+// const days1 = calcDaysPassed(future1, future2);
+// console.log(`Days passed: ${days1}`);
+
+//Internationalising Dates
+console.log(`-----Internationalising Dates------`);
+const timeNow = new Date();
+const timeUS = new Intl.DateTimeFormat("en-US").format(timeNow);
+const timeUK = new Intl.DateTimeFormat("en-GB").format(timeNow);
+console.log(
+  `The time in the UK is: ${timeUK}.  The time in the US is ${timeUS}`
+);
+const locale = navigator.language;
+console.log(locale);
+
+//Internationalising Numbers
+console.log(`-----Internationalise Numbers------`);
+const num = 3234823823.232;
+const options = {
+  style: "unit",
+  unit: "celsius",
+};
+console.log("US: ", new Intl.NumberFormat("en-US", options).format(num));
+console.log("Syria: ", new Intl.NumberFormat("ar-SY", options).format(num));
+console.log(
+  "Browser: ",
+  new Intl.NumberFormat(navigator.language, options).format(num)
+);
+
+const forMattedNum = new Intl.NumberFormat(navigator.locale, {
+  style: "currency",
+  currency: "USD",
+}).format(num);
+console.log(`Formatted Number into Dollars: ${forMattedNum}.`);
+
+const formatFunction = function (value, locale, currency) {
+  return new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency: currency,
+  }).format(value);
+};
+console.log(formatFunction(123, "pt-PT", "EUR")); //Portugal:  123,000 E
+console.log(formatFunction(654, navigator.locale, "GBP")); //Browser Loc:  £654.00
+
+//Timers
+const ingredients = ["chili", "peppers", "spinach"];
+const pizzaTimer = setTimeout(
+  (topping1, topping2) =>
+    console.log(`Here is your pizza with ${topping1} and ${topping2}`),
+  1000,
+  ...ingredients
+);
+if (ingredients.includes("chili")) {
+  clearTimeout(pizzaTimer);
+}
+
+//setInterval
+// setInterval(function () {
+//   const date = new Date();
+//   const hours = `${date.getHours()}`.padStart(2, "0");
+//   const mins = `${date.getMinutes()}`.padStart(2, "0");
+//   const secs = `${date.getSeconds()}`.padStart(2, "0");
+
+//   console.log(`The Time is: ${hours}:${mins}:${secs}.`);
+// }, 1000); //A clock that displays the time every second.
