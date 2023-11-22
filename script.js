@@ -371,13 +371,3 @@ car1.brake();
 // ford.brake();
 // ford.speedUS = 50;
 // console.log(ford);
-/**
- * @param {number} x
- * @return {boolean}
- */
-var isPalindrome = function (x) {
-  return String(x).split("").reverse().join("") === String(x);
-};
-
-console.log(isPalindrome(-121));
-console.log(isPalindrome(10));
